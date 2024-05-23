@@ -7,6 +7,7 @@ baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author: Tom Callister
 street_address: The University of Chicago 
+street_address_2: 5640 S. Ellis Ave.
 city: Chicago
 state: IL
 zip_code: 60637
