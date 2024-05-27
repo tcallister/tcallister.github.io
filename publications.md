@@ -19,11 +19,16 @@ nav-menu: true
 
 <!-- Table -->
 
+<h3>2024</h3>
+
 <div class="table-wrapper">
     <table>
         <tbody>
             <tr>
-                <td>Item1</td>
+                <td>
+                    Gravitational waves carry information beyond effective spin parameters but it is hard to extract.<br>
+                    S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. Submitted to Phys. Rev. D. ArXiv 2401.05613
+                </td>
             </tr>
             <tr>
                 <td>Item2</td>
