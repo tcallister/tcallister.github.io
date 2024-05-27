@@ -34,17 +34,32 @@ nav-menu: true
                     ArXiv: <a href="https://arxiv.org/abs/2401.05613">2401.05613</a>
                 </td>
             </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>2023</h3>
+
+<div class="table-wrapper">
+    <table>
+        <tbody>
             <tr>
-                <td>Item2</td>
+                <td>
+                    A New Probe of Gravitational Parity Violation Through (Non-)Observation of the Stochastic Gravitational- Wave Background.<br>
+                    <b>T. Callister</b>, L. Jenks, D. Holz, N. Yunes. 
+                </td>
+                <td>
+                    ArXiv: <a href="https://arxiv.org/abs/2312.12532">2312.12532</a>
+                </td>
             </tr>
             <tr>
-                <td>Item3</td>
-            </tr>
-            <tr>
-                <td>Item4</td>
-            </tr>
-            <tr>
-                <td>Item5</td>
+                <td>
+                    The metallicity dependence and evolutionary times of merging binary black holes: Combined constraints ⋆ from individual gravitational-wave detections and the stochastic background.<br>
+                    K. Turbang, M. Lalleman, <b>T. Callister</b>, N. van Remortel. 
+                </td>
+                <td>
+                    ArXiv: <a href="https://arxiv.org/abs/2310.17625">2310.17625</a>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -52,7 +67,5 @@ nav-menu: true
 
 
 </div>
-
 </section>
-
 </div>
