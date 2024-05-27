@@ -21,11 +21,6 @@ nav-menu: true
 
 <div class="table-wrapper">
     <table>
-        <thead>
-            <tr>
-                <th><h3>2024<h3></th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
                 <td>Item1</td>
