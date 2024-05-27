@@ -54,7 +54,7 @@ nav-menu: true
             </tr>
             <tr>
                 <td>
-                    The metallicity dependence and evolutionary times of merging binary black holes: Combined constraints ⋆ from individual gravitational-wave detections and the stochastic background.<br>
+                    The metallicity dependence and evolutionary times of merging binary black holes: Combined constraints from individual gravitational-wave detections and the stochastic background.<br>
                     K. Turbang, M. Lalleman, <b>T. Callister</b>, N. van Remortel. 
                 </td>
                 <td>
