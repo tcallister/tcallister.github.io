@@ -2,7 +2,7 @@
 title: Tom Callister
 subtitle: by HTML5 UP
 email: thomas.a.callister@gmail.com
-description: I'm a Schmidt AI in Science Fellow in the University of Chicago's Kavli Institute for Cosmological Physics. I enjoy thinking about the detection, analysis, and astrophysics of gravitational waves.
+description: I'm a Schmidt AI in Science Fellow in the University of Chicago's Kavli Institute for Cosmological Physics. I enjoy thinking about the detection, analysis, and astrophysics of gravitational waves.<br><br>Scroll down to find out more about me and my work!
 baseurl: "/forty-jekyll-theme" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author: Tom Callister
@@ -15,7 +15,7 @@ country: United States of America
 phone: 
 
 # homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
+tiles-source: pages # accepts "posts" or "pages"
 tiles-count: 8
 
 # social settings (key must match name of font awesome icon)
