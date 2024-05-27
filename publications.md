@@ -27,9 +27,12 @@ nav-menu: true
             <tr>
                 <td>
                     Gravitational waves carry information beyond effective spin parameters but it is hard to extract.<br>
-                    S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. Submitted to Phys. Rev. D. ArXiv 2401.05613
+                    S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. 
                 </td>
-                <td>Phys. Rev. D 109, 104036 (2024)</td>
+                <td>
+                    Phys. Rev. D 109, 104036 (2024)<br>
+                    ArXiv: 2401.05613
+                </td>
             </tr>
             <tr>
                 <td>Item2</td>
