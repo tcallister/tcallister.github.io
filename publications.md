@@ -30,8 +30,8 @@ nav-menu: true
                     S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. 
                 </td>
                 <td>
-                    Phys. Rev. D 109, 104036 (2024)<br>
-                    ArXiv: 2401.05613
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.104036">Phys. Rev. D 109, 104036 (2024)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2401.05613">2401.05613</a>
                 </td>
             </tr>
             <tr>
