@@ -115,7 +115,7 @@ nav-menu: true
                     K. Janssens, <b>T. Callister</b>, N. Christensen, <i>et al</i>.
                 </td>
                 <td>
-                    <a href=https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.082001">Phys. Rev. D. 105, 082001 (2022)</a><br>
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.082001">Phys. Rev. D. 105, 082001 (2022)</a><br>
                     ArXiv: <a href="https://arxiv.org/abs/2112.03560">2112.03560</a>
                 </td>
             </tr>
