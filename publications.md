@@ -199,6 +199,16 @@ nav-menu: true
                     ArXiv: <a href="https://arxiv.org/abs/2101.12130">2101.12130</a>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    When are LIGO/Virgo’s Big Black-Hole Mergers?<br>
+                    M. Fishbach, Z. Doctor, <b>T. Callister</b>, <i>et al</i>.
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/abee11">Astrophys. J. 912, 98 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2101.07699">2101.07699</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
@@ -216,6 +226,46 @@ nav-menu: true
                 <td>
                     <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ac1347">Astrophys. J. 920, 157 (2021)</a><br>
                     ArXiv: <a href="https://arxiv.org/abs/2011.09570">2011.09570</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Joint constraints on the field-cluster mixing fraction, common envelope efficiency, and <br>globular cluster radii from a population of binary hole mergers via deep learning.<br>
+                    K. Wong, K. Breivik, K. Kremer, <b>T. Callister</b>
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.103.083021">Phys. Rev. D 103, 083021 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2011.03564">2011.03564</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Population Properties of Compact Objects from the Second LIGO-Virgo Gravitational-Wave Transient Catalog.<br>
+                    LIGO Scientific Collaboration and Virgo Collaboration (<br>Writing Team & Core Analyst</b>)
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/abe949">Astrophys. J. Letters 913, L7 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2010.14533">2010.14533</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Shouts and Murmurs: Combining Individual Gravitational-Wave Sources with the Stochastic Background <br>to Measure the History of Binary Black Hole Mergers<br>
+                    <b>T. Callister</b>, M. Fishbach, D. Holz, W. Farr
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ab9743">Astrophys. J. Letters 896, L32 (2020)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2003.12152">2003.12152</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    The Low Effective Spin of Binary Black Holes and Implications for Individual Gravitational-Wave Events<br>
+                    S. Miller, <b>T. A. Callister</b>, W. Farr
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab80c0">Astrophys. J. 895, 128 (2020)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2001.06051">2001.06051</a>
                 </td>
             </tr>
         </tbody>
