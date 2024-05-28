@@ -311,6 +311,124 @@ nav-menu: true
     </table>
 </div>
 
+<h3>2018</h3>
+
+<div class="table-wrapper">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    First Search for a Stochastic Gravitational-Wave Background from Ultralight Bosons<br>
+                    L. Tsukada, <b>T. Callister</b>, A. Matas, P. Meyers
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.99.103015">Phys. Rev. D 99, 103015 (2019)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1812.09622">1812.09622</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gravitational-Wave Geodesy: A New Tool for Validating Detection of the Stochastic Gravitational-Wave Background<br>
+                    <b>T. A. Callister</b>, M. W. Coughlin, J. B. Kanner
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/aaf3a5">Astrophys. J. Letters 869, L28 (2018)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1808.03716">1808.03716</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A Search for Tensor, Vector, and Scalar Polarizations in the Stochastic Gravitational-Wave Background<br>
+                    LIGO Scientific Collaboration and Virgo Collaboration (Lead author: <b>T. Callister</b>)<br>
+                    <b>PRL Editor's Suggestion</b>
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.201102">Phys. Rev. Lett. 120, 201102 (2018)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1802.10194">1802.10194</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Identification and mitigation of narrow spectral artifacts that degrade searches for persistent<br> gravitational waves in the first two observing runs of Advanced LIGO<br>
+                    P. B. Covas et al. (incl. <b>T. Callister</b>)
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.082002">Phys. Rev. D 97, 082002 (2018)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1801.07204">1801.07204</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>2017</h3>
+
+<div class="table-wrapper">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    Polarization-based tests of gravity with the stochastic gravitational-wave background<br>
+                    <b>T. Callister</b>, S. A. Biscoveanu, N. Christensen, M. Isi, A. Matas, et al.
+                </td>
+                <td>
+                    <a href="https://link.aps.org/doi/10.1103/PhysRevX.7.041058">Phys. Rev. X 7, 041058 (2017)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1704.08373">1704.08373</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Observing gravitational waves with a single detector<br>
+                    <b>T. A. Callister</b>, J. B. Kanner, T. J. Massinger, S. Dhurandhar, and A. J. Weinstein.
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.1088/1361-6382/aa7a76/meta">Class. Quantum Grav. 34, 155007 (2017)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1704.00818">1704.00818</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>2016</h3>
+
+<div class="table-wrapper">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    Upper limits on the stochastic gravitational-wave background from Advanced LIGO's first observing run<br>
+                    LIGO Scientific Collaboration and Virgo Collaboration (incl. <b>T. Callister</b>)
+                </td>
+                <td>
+                    <a href="https://link.aps.org/doi/10.1103/PhysRevLett.118.121101">Phys. Rev. Letters 118, 121101 (2017)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1612.02029">1612.02029</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Limits of astrophysics with gravitational-wave backgrounds<br>
+                    <b>T. Callister</b>, L. Sammut, S. Qiu, I. Mandel, and E. Thrane.
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.6.031018">Phys. Rev. X 6, 031018 (2016)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1604.02513">1604.02513</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gravitational-wave constraints on the progenitors of fast radio bursts<br>
+                    <b>T. Callister</b>, J. Kanner, and A. Weinstein.
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8205/825/1/L12/">Astrophys. J. Letters 825, L12 (2016)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1603.08867">1603.08867</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </div>
 </section>
 </div>
