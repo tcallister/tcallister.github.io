@@ -1,5 +1,6 @@
 ---
 layout: page
+layout: landing
 title: Publications
 image: assets/images/pages.jpg
 nav-menu: true
