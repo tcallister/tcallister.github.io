@@ -56,9 +56,6 @@
 						border: solid 1px _palette(border);
 						border-left-width: 0;
 						border-top-width: 0;
-                        max-width: 60vw; // Set the maximum width as per your requirement
-                        word-wrap: break-word; // This will wrap the text if it reaches the max-width
-
 
 						&:first-child {
 							border-left-width: 1px;

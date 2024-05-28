@@ -41,11 +41,11 @@ nav-menu: true
 <h3>2023</h3>
 
 <div class="table-wrapper">
-    <table style="table-layout: fixed">
+    <table>
         <tbody>
             <tr>
                 <td>
-                    xxx A New Probe of Gravitational Parity Violation Through (Non-)Observation of the Stochastic Gravitational- Wave Background.<br>
+                    A New Probe of Gravitational Parity Violation Through (Non-)Observation of the Stochastic<br>Gravitational- Wave Background.<br>
                     <b>T. Callister</b>, L. Jenks, D. Holz, N. Yunes. 
                 </td>
                 <td>
@@ -54,7 +54,7 @@ nav-menu: true
             </tr>
             <tr>
                 <td>
-                    The metallicity dependence and evolutionary times of merging binary black holes: Combined constraints from individual gravitational-wave detections and the stochastic background.<br>
+                    The metallicity dependence and evolutionary times of merging binary black holes:<br>Combined constraints from individual gravitational-wave detections and the stochastic background.<br>
                     K. Turbang, M. Lalleman, <b>T. Callister</b>, N. van Remortel. 
                 </td>
                 <td>
