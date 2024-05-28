@@ -12,7 +12,7 @@ nav-menu: true
 <!-- Two -->
 <section id="two" class="spotlights">
 	<section>
-	    <img src="assets/images/pic08.jpg" alt="" data-position="center center"/>
+	    <img src="assets/images/news/test.png" alt="" data-position="center center"/>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
