@@ -220,7 +220,7 @@ nav-menu: true
         <tbody>
             <tr>
                 <td>
-                    State of the field: Binary black hole spins, natal kicks, and prospects for isolated<br>field formation after GWTC-2<br>
+                    State of the field: Binary black hole spins, natal kicks, and prospects for isolated field formation<br>after GWTC-2<br>
                     <b>T. Callister</b>, W. M. Farr, M. Renzo
                 </td>
                 <td>
@@ -241,7 +241,7 @@ nav-menu: true
             <tr>
                 <td>
                     Population Properties of Compact Objects from the Second LIGO-Virgo Gravitational-Wave Transient Catalog.<br>
-                    LIGO Scientific Collaboration and Virgo Collaboration (<br>Writing Team & Core Analyst</b>)
+                    LIGO Scientific Collaboration and Virgo Collaboration (<b>Writing Team & Core Analyst</b>)
                 </td>
                 <td>
                     <a href="https://iopscience.iop.org/article/10.3847/2041-8213/abe949">Astrophys. J. Letters 913, L7 (2021)</a><br>
@@ -250,7 +250,7 @@ nav-menu: true
             </tr>
             <tr>
                 <td>
-                    Shouts and Murmurs: Combining Individual Gravitational-Wave Sources with the Stochastic Background <br>to Measure the History of Binary Black Hole Mergers<br>
+                    Shouts and Murmurs: Combining Individual Gravitational-Wave Sources with the<br>Stochastic Backgroundto Measure the History of Binary Black Hole Mergers<br>
                     <b>T. Callister</b>, M. Fishbach, D. Holz, W. Farr
                 </td>
                 <td>
