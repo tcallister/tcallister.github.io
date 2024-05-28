@@ -41,11 +41,11 @@ nav-menu: true
 <h3>2023</h3>
 
 <div class="table-wrapper">
-    <table>
+    <table style="table-layout: fixed">
         <tbody>
             <tr>
                 <td>
-                    A New Probe of Gravitational Parity Violation Through (Non-)Observation of the Stochastic Gravitational- Wave Background.<br>
+                    xxx A New Probe of Gravitational Parity Violation Through (Non-)Observation of the Stochastic Gravitational- Wave Background.<br>
                     <b>T. Callister</b>, L. Jenks, D. Holz, N. Yunes. 
                 </td>
                 <td>
