@@ -1,5 +1,5 @@
 ---
-title: Landing
+title: News
 layout: landing
 description: 'Research news and highlights!'
 image: assets/images/pic07.jpg
@@ -12,9 +12,7 @@ nav-menu: true
 <!-- Two -->
 <section id="two" class="spotlights">
 	<section>
-		<a href="generic.html" class="image">
-			<img src="{% link assets/images/pic08.jpg %}" alt=""/>
-		</a>
+	    <img src="{% link assets/images/pic08.jpg %}" alt=""/>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
