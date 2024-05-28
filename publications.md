@@ -161,6 +161,26 @@ nav-menu: true
             </tr>
             <tr>
                 <td>
+                    A Thesaurus for Common Priors in Gravitational-Wave Astronomy<br>
+                    <b>T. Callister</b>
+                </td>
+                <td>
+                    ArXiv Note (2021)<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2104.09508">2104.09508</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Implications for first-order cosmological phase transitions from the third LIGO-Virgo observing run<br>
+                    A. Romero, K. Martinovic, <b>T. Callister</b>, <i>et al</i>.
+                </td>
+                <td>
+                    <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.151301">Phys. Rev. Letters 126, 151301 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2102.01714">2102.01714</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     Prospects of gravitational-wave detections from common-envelope evolution with LISA<br>
                     M. Renzo, <b>T. Callister</b>, K. Chatziioannou, L. A. C. van Son, <i>et al</i>.
                 </td>
@@ -169,11 +189,38 @@ nav-menu: true
                     ArXiv: <a href="https://arxiv.org/abs/2102.00078">2102.00078</a>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    Upper Limits on the Isotropic Gravitational-Wave Background from Advanced LIGO’s and Advanced Virgo’s Third Observing Run<br>
+                    LIGO, Virgo, and KAGRA Collaborations (Writing Team & Core Analyst)
+                </td>
+                <td>
+                    <a href="https://link.aps.org/doi/10.1103/PhysRevD.104.022004">Phys. Rev. D 104, 022004 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2101.12130">2101.12130</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
 
+<h3>2020</h3>
 
+<div class="table-wrapper">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    State of the field: Binary black hole spins, natal kicks, and prospects for isolated<br>field formation after GWTC-2<br>
+                    <b>T. Callister</b>, W. M. Farr, M. Renzo
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ac1347">Astrophys. J. 920, 157 (2021)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2011.09570">2011.09570</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 </div>
 </section>
