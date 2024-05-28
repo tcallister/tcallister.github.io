@@ -61,6 +61,16 @@ nav-menu: true
                     ArXiv: <a href="https://arxiv.org/abs/2310.17625">2310.17625</a>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    A parameter-free tour of the binary black hole population.<br>
+                    <b>T. Callister</b>, W. Farr. 
+                </td>
+                <td>
+                    <a href="https://link.aps.org/doi/10.1103/PhysRevX.14.021005">Phys. Rev. X 14, 021005 (2024)</a>
+                    ArXiv: <a href="https://arxiv.org/abs/2302.07289">2302.07289</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
