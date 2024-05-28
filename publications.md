@@ -272,6 +272,45 @@ nav-menu: true
     </table>
 </div>
 
+<h3>2019</h3>
+
+<div class="table-wrapper">
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    New Limits on the Low-Frequency Radio Transient Sky Using 31 hr of All-Sky Data with the OVRO-LWA<br>
+                    M. M. Anderson et al. (incl. <b>T. Callister</b>)
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab4f87/meta">Astrophys. J. 886, 123 (2019)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1911.04591">1911.04591</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A First Search for Prompt Radio Emission from a Gravitational-Wave Event<br>
+                    <b>T. A. Callister</b>, M. M. Anderson, G. Hallinan, et al.
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ab2248">Astrophys. J. Letters 877, L39 (2019)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1903.06786">1903.06786</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A search for the isotropic stochastic background using data from Advanced LIGO's second observing run<br>
+                    LIGO Scientific Collaboration and Virgo Collaboration (Lead authors: A. Matas & <b>T. Callister</b>)
+                </td>
+                <td>
+                    <a href="https://link.aps.org/doi/10.1103/PhysRevD.100.061101">Phys. Rev. D 100, 061101 (2019)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/1903.02886">1903.02886</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </div>
 </section>
 </div>
