@@ -2,7 +2,7 @@
 title: News
 layout: landing
 description: 'Research news and highlights!'
-image: assets/images/pic07.jpg
+image: assets/images/webb.jpg
 nav-menu: true
 ---
 
