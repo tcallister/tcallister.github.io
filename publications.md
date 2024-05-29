@@ -2,7 +2,7 @@
 layout: page
 layout: landing
 title: Publications
-description: 
+description: Selected papers
 image: assets/images/pages.jpg
 nav-menu: true
 ---
