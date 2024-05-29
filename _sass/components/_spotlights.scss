@@ -31,8 +31,11 @@
 				img {
 					border-radius: 0;
 					display: block;
-					width: 100%;
-				}
+					width: auto; // Change this from 100% to auto
+					max-width: 100%; // Add this line
+					height: auto; // Add this line
+					margin: auto; // Center the image within the flex container
+            	}
 
 				&:before {
 					background: transparentize(_palette(bg), 0.1);
