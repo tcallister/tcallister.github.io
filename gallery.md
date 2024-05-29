@@ -9,21 +9,27 @@ nav-menu: true
 <!-- Main -->
 <div id="main">
 
+<!-- One -->
+<section id="one">
+	<div class="inner">
+		<p>I spend a lot of time making plots and graphics for talks, and sometimes I'm asked to share these for others to use. This page links to some recent figures, as well as the code used to generate them. Please use in your own talks and presentations! (If you do so, please credit me! You can even star the linked GitHub repos if you wish.)</p>
+	</div>
+</section>
+
 <!-- Two -->
 <section id="two" class="spotlights">
 	<section>
-		<a href="generic.html" class="image">
-	        <img src="assets/images/news/ar-viewpoint.png" alt="" data-position="center center"/>
+		<a href="https://github.com/gw-gallery/cbc-landscape/tree/main" class="image">
+	        <img src="assets/images/gallery/cbc_landscape_gwtc3.png" alt="" data-position="center center"/>
         </a>
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>Featured in Physics Magazine Viewpoint</h3>
+					<h3>Landscape of Compact Binary Detections</h3>
 				</header>
 				    <p>
-                    My <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.021005">recent paper</a> with Will was featured in Physics Magazine, with a wonderful <a href="https://physics.aps.org/articles/v17/57">"Viewpoint" article</a> written by Maya Fishbach.
-                    In her article, Maya pedagogically lays out the methodological differences between traditional parametric vs. "non-parametric" models and describes some highlights from our own work.
-                    Thank you, Maya!
+                    This plot illustrates the masses of all compact binary mergers detected via gravitational waves.
+                    The <a href="https://github.com/gw-gallery/cbc-landscape/tree/main">GitHub page</a> for this image contains additional images breaking this landscape down by individual catalog releases, as well as an "honest" version of this plot showing uncertainties on measured masses.
                     </p>
 			</div>
 		</div>
