@@ -18,12 +18,13 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<header class="major">
-					<h3>test Orci maecenas </h3>
+					<h3>Non-parametric BBH populations paper in PRX</h3>
 				</header>
-				<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
+				    <p>
+                    At long last, <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.021005">this paper</a> has been published in PRX!
+                    Will and I measure the black hole population using an autoregressive process model for the black hole merger rate (this involves doing hierarchical inference with hundreds of thousands of free parameters), checking the robustness of known features and finding fun new ones.
+                    This paper was flagged as a "Featured" article.
+                    </p>
 			</div>
 		</div>
 	</section>
