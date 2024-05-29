@@ -2,7 +2,7 @@
 layout: page
 layout: landing
 title: Publications
-description: 'Selected publications. The included LIGO-Virgo-KAGRA Collaboration papers are those to which I contributed significantly.'
+description: 
 image: assets/images/pages.jpg
 nav-menu: true
 ---
