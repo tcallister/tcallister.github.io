@@ -25,6 +25,8 @@
 				display: flex;
 				position: relative;
 				width: 30%;
+				align-items: center; // Add this line
+				justify-content: center; // Add this line
 
 				img {
 					border-radius: 0;
