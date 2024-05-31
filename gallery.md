@@ -16,5 +16,10 @@ nav-menu: true
 	</div>
 </section>
 
+<ul class="actions">
+	<li><a href="#" class="button big">Big</a></li>
+</ul>
+
+<span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png " alt="" /></span>
 
 </div>
