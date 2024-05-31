@@ -20,6 +20,6 @@ nav-menu: true
 	<li><a href="#" class="button big">Big</a></li>
 </ul>
 
-<span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png " alt="" /></span>
+<span class="image crop"><img src="assets/images/cbc_landscape_gwtc3.png " alt="" /></span>
 
 </div>
