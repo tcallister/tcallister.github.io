@@ -2,7 +2,7 @@
 title: Gallery
 layout: landing
 description: 'Plots and graphics'
-image: assets/images/cbc_landscape_gwtc3.jpg
+image: assets/images/cbc_landscape_gwtc3.png
 nav-menu: true
 ---
 
