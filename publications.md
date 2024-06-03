@@ -57,6 +57,7 @@ nav-menu: true
                     K. Turbang, M. Lalleman, <b>T. Callister</b>, N. van Remortel. 
                 </td>
                 <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad3d5c">Astrophys. J. 967, 142 (2024)</a><br>
                     ArXiv: <a href="https://arxiv.org/abs/2310.17625">2310.17625</a>
                 </td>
             </tr>
