@@ -21,6 +21,9 @@ nav-menu: true
 		<div class="6u"><span class="image fit"><img src="assets/images/mass_v_redshift_pollock_plot.jpeg" alt="" /></span></div>
 		<div class="6u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png" alt=""/></span></div>
     </div>
+	<div class="row 50% uniform">
+		<div class="4u"><span class="image fit"><img src="assets/images/inference.mp4" alt="" /></span></div>
+    </div>
 </div>
 
 </div>
