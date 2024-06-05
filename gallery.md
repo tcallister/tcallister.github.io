@@ -16,6 +16,8 @@ nav-menu: true
 	</div>
 </section>
 
+testing
+
 <div class="box alt">
 	<div class="row 50% uniform">
 		<div class="4u"><span class="image crop"><img src="assets/images/pic08.jpg" alt="" /></span></div>
