@@ -19,7 +19,7 @@ nav-menu: true
 <div class="box alt">
 	<div class="row 50% uniform">
 		<div class="6u"><span class="image fit"><img src="assets/images/mass_v_redshift_pollock_plot.png" alt="" /></span></div>
-		<div class="6u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png" alt=""/></span></div>
+		<div class="6u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.jpeg" alt=""/></span></div>
     </div>
 </div>
 
