@@ -2,7 +2,7 @@
 title: Gallery
 layout: landing
 description: 'Plots and graphics'
-image: assets/images/cbc_landscape_gwtc3.png
+image: assets/images/gallery/cbc_landscape_gwtc3.png
 nav-menu: true
 ---
 
@@ -18,11 +18,15 @@ nav-menu: true
 
 <div class="box alt">
 	<div class="row 50% uniform">
-		<div class="6u"><span class="image fit"><img src="assets/images/mass_v_redshift_pollock_plot.jpeg" alt="" /></span></div>
-		<div class="6u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png" alt=""/></span></div>
+		<div class="6u"><span class="image fit"><img src="assets/images/gallery/cbc_landscape_gwtc3_with_errors.png" alt=""/></span></div>
+		<div class="6u$"><span class="image fit"><img src="assets/images/gallery/cbc_landscape_gwtc3.png" alt=""/></span></div>
     </div>
 	<div class="row 50% uniform">
-		<div class="4u"><span class="image fit"><img src="assets/images/inference.mp4" alt="" /></span></div>
+		<div class="6u"><span class="image fit"><img src="assets/images/gallery/mass_v_redshift_pollock_plot.jpeg" alt="" /></span></div>
+		<div class="6u$"><span class="image fit"><img src="assets/images/gallery/mass_v_redshift_pollock_plot_with_errors_annotated.jpeg" alt="" /></span></div>
+    </div>
+	<div class="row 50% uniform">
+		<div class="6u"><span class="image fit"><img src="assets/images/gallery/inference.mp4" alt="" /></span></div>
     </div>
 </div>
 
