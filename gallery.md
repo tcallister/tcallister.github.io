@@ -16,12 +16,11 @@ nav-menu: true
 	</div>
 </section>
 
-testing
-
 <div class="box alt">
 	<div class="row 50% uniform">
-		<div class="4u"><span class="image fit"><img src="assets/images/pic08.jpg" alt="" /></span></div>
-		<div class="8u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png" alt="" data-position="center center"/></span></div>
+		<div class="3u"><span class="image fit"><img src="assets/images/pic08.jpg" alt="" /></span></div>
+		<div class="3u"><span class="image fit"><img src="assets/images/pic08.jpg" alt="" /></span></div>
+		<div class="6u$"><span class="image fit"><img src="assets/images/cbc_landscape_gwtc3.png" alt=""/></span></div>
     </div>
 </div>
 
