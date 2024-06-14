@@ -29,10 +29,16 @@ nav-menu: true
 </div>
 
 <div class="box alt">
+    <h3>Compact binary landscape</h3>
 	<div class="row 50% uniform">
 		<div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3.png" alt=""/></a></span></div>
 		<div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3_with_errors.png" alt=""/></a></span></div>
     </div>
+    <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
+</div>
+
+
+<div class="box alt">
 	<div class="row 50% uniform">
 		<div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot.jpeg" alt="" /></a></span></div>
 		<div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot_with_errors_annotated.jpeg" alt="" /></a></span></div>
