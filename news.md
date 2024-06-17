@@ -13,6 +13,22 @@ nav-menu: true
 <section id="two" class="spotlights">
 	<section>
 		<a href="generic.html" class="image">
+	        <img src="assets/images/news/new-yorker.png" alt="" data-position="center center"/>
+        </a>
+		<div class="content">
+			<div class="inner">
+				<header class="major">
+					<h3>"Shouts & Murmurs" shoutout in the New Yorker</h3>
+				</header>
+				    <p>
+                    The most recent New Yorker featured <a href="https://www.newyorker.com/magazine/2024/06/10/are-we-doomed-heres-how-to-think-about-it">an article</a> about my collaborator (and current boss!) Daniel Holz and his work thinking about existential risk and humanity's possible imminent doom.
+                    In the midst of all of this appeared a quick shoutout to our paper from a few years ago, titled (appropriately for the publication in question): <em>Shouts and Murmurs: Combining Individual Gravitational-Wave Sources with the Stochastic Background to Measure the History of Binary Black Hole Mergers</em>.
+                    </p>
+			</div>
+		</div>
+	</section>
+	<section>
+		<a href="generic.html" class="image">
 	        <img src="assets/images/news/ar-viewpoint.png" alt="" data-position="center center"/>
         </a>
 		<div class="content">
