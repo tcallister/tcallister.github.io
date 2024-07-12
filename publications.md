@@ -28,8 +28,6 @@ nav-menu: true
                     A Star Cluster Population of High Mass Black Hole Mergers in Gravitational Wave Data.<br>
                     F. Antonini, I. Romero-Shaw, <b>T. Callister</b>.
                 </td>
-            </tr>
-            <tr>
                 <td>
                     Submitted to PRL (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2406.19044">2406.19044</a>
