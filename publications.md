@@ -25,6 +25,30 @@ nav-menu: true
         <tbody>
             <tr>
                 <td>
+                    A Star Cluster Population of High Mass Black Hole Mergers in Gravitational Wave Data.<br>
+                    F. Antonini, I. Romero-Shaw, <b>T. Callister</b>.
+                </td>
+                <td>
+                    Submitted to PRL (2024).<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2406.19044">2406.19044</a>
+                </td>
+                <td>
+                    No need to know: astrophysics-free gravitational-wave cosmology.<br>
+                    A. Farah, <b>T. Callister</b>, J. María Ezquiaga, M. Zevin, D. Holz.
+                </td>
+                <td>
+                    Submitted to ApJ (2024).<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2404.02210">2404.02210</a>
+                </td>
+                <td>
+                    Background information: a study on the sensitivity of astrophysical gravitational-wave background searches.<br>
+                    A. Renzini, <b>T. Callister</b>, K. Chatziioannou, W. Farr.
+                </td>
+                <td>
+                    Submitted to PRD (2024).<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2403.14793">2403.14793</a>
+                </td>
+                <td>
                     Gravitational waves carry information beyond effective spin parameters but it is hard to extract.<br>
                     S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. 
                 </td>
@@ -61,6 +85,14 @@ nav-menu: true
                     ArXiv: <a href="https://arxiv.org/abs/2310.17625">2310.17625</a>
                 </td>
             </tr>
+                <td>
+                    pygwb: A Python-based Library for Gravitational-wave Background Searches.<br>
+                    A. Renzini <i>et al.</i> (<b>incl. T. Callister</b>).
+                </td>
+                <td>
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/acd775">Astrophys. J. 952, 25 (2023)</a><br>
+                    ArXiv: <a href="https://arxiv.org/abs/2303.15696">2303.15696</a>
+                </td>
             <tr>
                 <td>
                     A parameter-free tour of the binary black hole population.<br>
