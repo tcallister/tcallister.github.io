@@ -16,8 +16,10 @@ nav-menu: true
 	</div>
 </section>
 
-<h3>Landscape of observed compact binary mergers</h3>
+test
+
 <div class="inner">
+<h3>Landscape of observed compact binary mergers</h3>
 <div class="row 50% uniform">
     <div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3.png" alt=""/></a></span></div>
     <div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3_with_errors.png" alt=""/></a></span></div>
