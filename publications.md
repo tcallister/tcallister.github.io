@@ -28,10 +28,14 @@ nav-menu: true
                     A Star Cluster Population of High Mass Black Hole Mergers in Gravitational Wave Data.<br>
                     F. Antonini, I. Romero-Shaw, <b>T. Callister</b>.
                 </td>
+            </tr>
+            <tr>
                 <td>
                     Submitted to PRL (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2406.19044">2406.19044</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     No need to know: astrophysics-free gravitational-wave cosmology.<br>
                     A. Farah, <b>T. Callister</b>, J. María Ezquiaga, M. Zevin, D. Holz.
@@ -40,6 +44,8 @@ nav-menu: true
                     Submitted to ApJ (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2404.02210">2404.02210</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     Background information: a study on the sensitivity of astrophysical gravitational-wave background searches.<br>
                     A. Renzini, <b>T. Callister</b>, K. Chatziioannou, W. Farr.
@@ -48,6 +54,8 @@ nav-menu: true
                     Submitted to PRD (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2403.14793">2403.14793</a>
                 </td>
+            </tr>
+            <tr>
                 <td>
                     Gravitational waves carry information beyond effective spin parameters but it is hard to extract.<br>
                     S. Miller, Z. Koe, <b>T. Callister</b>, K. Chatziioannou. 
