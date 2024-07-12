@@ -16,8 +16,6 @@ nav-menu: true
 	</div>
 </section>
 
-This is a test
-
 <div class="inner">
 
 <h3>Landscape of observed compact binary mergers</h3>
@@ -41,14 +39,16 @@ The total masses and redshifts of all binary black hole detections published by 
 I like using this pair of plots to illustrate why analysis of the compact binary population is hard.
 If you look only at point estimates of binary properties (left), it seems as if there is a clear evolution of black hole masses with redshift.
 Conclusions are much murker if you instead look at full posteriors on binary masses and redshifts (right); this is further compounded by search selection effects (which prevent observations in the bottom right corner) and finite observing time (consistent with no observations in the top left corner).
+Code and more variants at: <a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot">https://github.com/gw-gallery/mass-vs-redshift-pollock-plot</a>.
 </p>
-</div>
 
-<div class="inner">
-<h3>Landscape of observed compact binary mergers</h3>
+<h3>Hierarchical inference demonstration</h3>
 <div class="row 50% uniform">
     <div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/hierarchical-inference-demo" class=image><img src="assets/images/gallery/inference.mp4" alt="" /></a></span></div>
 </div>
-</div>
+<p>
+A quick demonstration of hierarchical inference, showing recovery of the correct underyling population (left) as we gather more and more noisy measurements drawn from this population (right).
+More at: <a href="https://github.com/gw-gallery/hierarchical-inference-demo">https://github.com/gw-gallery/hierarchical-inference-demo</a>.
+</p>
 
 </div>
