@@ -16,9 +16,8 @@ nav-menu: true
 	</div>
 </section>
 
-This is a test
-
 <h3>Landscape of observed compact binary mergers</h3>
+<div class="inner">
 <div class="row 50% uniform">
     <div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3.png" alt=""/></a></span></div>
     <div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/cbc-landscape" class=image><img src="assets/images/gallery/cbc_landscape_gwtc3_with_errors.png" alt=""/></a></span></div>
@@ -28,6 +27,7 @@ The masses of all confident compact binary detections published by the LIGO-Virg
 The left plot shows point estimates ("best guesses") of each object's mass, while the right plot shows the actual uncertainties associated with each measurement.
 See more variants at: <a href="https://github.com/gw-gallery/cbc-landscape">https://github.com/gw-gallery/cbc-landscape</a>.
 </p>
+</div>
 
 
 <div class="box alt">
