@@ -16,8 +16,6 @@ nav-menu: true
 	</div>
 </section>
 
-test
-
 <div class="inner">
 <h3>Landscape of observed compact binary mergers</h3>
 <div class="row 50% uniform">
@@ -31,15 +29,25 @@ See more variants at: <a href="https://github.com/gw-gallery/cbc-landscape">http
 </p>
 </div>
 
+<div class="inner">
+<h3>Observed binary black hole masses vs. redshifts</h3>
+<div class="row 50% uniform">
+    <div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot.jpeg" alt="" /></a></span></div>
+    <div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot_with_errors_annotated.jpeg" alt="" /></a></span></div>
+</div>
+<p>
+The total masses and redshifts of all binary black hole detections published by the LIGO-Virgo-KAGRA Collaboration to date.
+I like using this pair of plots to illustrate why analysis of the compact binary population is hard.
+If you look only at point estimates of binary properties (left), it seems as if there is a clear evolution of black hole masses with redshift.
+Conclusions are much murker if you instead look at full posteriors on binary masses and redshifts (right); this is further compounded by search selection effects (which prevent observations in the bottom right corner) and finite observing time (consistent with no observations in the top left corner).
+</p>
+</div>
 
-<div class="box alt">
-	<div class="row 50% uniform">
-		<div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot.jpeg" alt="" /></a></span></div>
-		<div class="6u$"><span class="image fit"><a href="https://github.com/gw-gallery/mass-vs-redshift-pollock-plot" class=image><img src="assets/images/gallery/mass_v_redshift_pollock_plot_with_errors_annotated.jpeg" alt="" /></a></span></div>
-    </div>
-	<div class="row 50% uniform">
-		<div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/hierarchical-inference-demo" class=image><img src="assets/images/gallery/inference.mp4" alt="" /></a></span></div>
-    </div>
+<div class="inner">
+<h3>Landscape of observed compact binary mergers</h3>
+<div class="row 50% uniform">
+    <div class="6u"><span class="image fit"><a href="https://github.com/gw-gallery/hierarchical-inference-demo" class=image><img src="assets/images/gallery/inference.mp4" alt="" /></a></span></div>
+</div>
 </div>
 
 </div>
