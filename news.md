@@ -8,6 +8,9 @@ nav-menu: true
 
 <!-- Main -->
 <div id="main">
+<div class="inner">
+
+Test
 
 <!-- Two -->
 <section id="two" class="spotlights">
@@ -64,4 +67,5 @@ nav-menu: true
 </section>
 
 
+</div>
 </div>
