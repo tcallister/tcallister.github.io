@@ -25,6 +25,16 @@ nav-menu: true
         <tbody>
             <tr>
                 <td>
+                    A neural network emulator of the Advanced LIGO and Advanced Virgo selection function.<br>
+                    <b>T. Callister</b>, R. Essick, D. Holz.
+                </td>
+                <td>
+                    Submitted to PRD (2024).<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2408.16828">2408.16828</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     A Star Cluster Population of High Mass Black Hole Mergers in Gravitational Wave Data.<br>
                     F. Antonini, I. Romero-Shaw, <b>T. Callister</b>.
                 </td>
@@ -39,7 +49,7 @@ nav-menu: true
                     A. Farah, <b>T. Callister</b>, J. María Ezquiaga, M. Zevin, D. Holz.
                 </td>
                 <td>
-                    Submitted to ApJ (2024).<br>
+                    Astrophys. J., in press (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2404.02210">2404.02210</a>
                 </td>
             </tr>
@@ -49,7 +59,7 @@ nav-menu: true
                     A. Renzini, <b>T. Callister</b>, K. Chatziioannou, W. Farr.
                 </td>
                 <td>
-                    Submitted to PRD (2024).<br>
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.110.023014">Phys. Rev. D 110, 023014 (2024)</a><br>
                     ArXiv: <a href="https://arxiv.org/abs/2403.14793">2403.14793</a>
                 </td>
             </tr>
