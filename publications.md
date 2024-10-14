@@ -88,6 +88,7 @@ nav-menu: true
                     <b>T. Callister</b>, L. Jenks, D. Holz, N. Yunes. 
                 </td>
                 <td>
+                    Submitted to PRX<br>
                     ArXiv: <a href="https://arxiv.org/abs/2312.12532">2312.12532</a>
                 </td>
             </tr>
