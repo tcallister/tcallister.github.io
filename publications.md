@@ -25,11 +25,21 @@ nav-menu: true
         <tbody>
             <tr>
                 <td>
+                    Observed Gravitational-Wave Populations.<br>
+                    <b>T. Callister</b>.
+                </td>
+                <td>
+                    To appear in Encyclopedia of Astrophysics, 1st ed. (editor-in-chief I. Mandel), Elsevier.<br>
+                    ArXiv: <a href="https://arxiv.org/abs/2410.19145">2410.19145</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     A neural network emulator of the Advanced LIGO and Advanced Virgo selection function.<br>
                     <b>T. Callister</b>, R. Essick, D. Holz.
                 </td>
                 <td>
-                    Submitted to PRD (2024).<br>
+                    Phys. Rev. D, in press (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2408.16828">2408.16828</a>
                 </td>
             </tr>
@@ -39,7 +49,7 @@ nav-menu: true
                     F. Antonini, I. Romero-Shaw, <b>T. Callister</b>.
                 </td>
                 <td>
-                    Submitted to PRL (2024).<br>
+                    Phys. Rev. Letters, in press (2024).<br>
                     ArXiv: <a href="https://arxiv.org/abs/2406.19044">2406.19044</a>
                 </td>
             </tr>
@@ -88,7 +98,7 @@ nav-menu: true
                     <b>T. Callister</b>, L. Jenks, D. Holz, N. Yunes. 
                 </td>
                 <td>
-                    Submitted to PRX<br>
+                    Phys. Rev. D, in press (2024)<br>
                     ArXiv: <a href="https://arxiv.org/abs/2312.12532">2312.12532</a>
                 </td>
             </tr>
