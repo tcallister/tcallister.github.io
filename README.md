@@ -1,4 +1,4 @@
-# tcallister.github.io
+# Academic website
 
 Personal academic website. Jekyll 3.10 (via the `github-pages` gem), custom theme, built and served by GitHub Pages from `master`.
 
@@ -27,16 +27,16 @@ Also: never name a field `url` (Jekyll reserves it). Use `link`.
 
 ```yaml
 ---
-title: "Gravitational-wave constraints on the progenitors of fast radio bursts"
-authors: "T. Callister, J. Kanner, and A. Weinstein"   # "T. Callister" is bolded automatically
-date: 2016-03-01                  # sets sort order
-venue: "Astrophys. J. Letters 825, L12"
-arxiv: "1603.08867"               # QUOTED. Gives arXiv, SciX, and INSPIRE links
-journal: https://iopscience.iop.org/article/10.3847/2041-8205/825/1/L12/
-thumbnail: papers/2011.09570.webp  # optional; path under assets/images/. 336x252 (4:3) WebP crop of a figure
-tags: [first]                     # any of: first, student, lvk
-role: "Writing Team & Core Analyst"   # optional; shown after author list (useful for LVK papers)
-highlight: "PRL Editor's Suggestion"  # optional; free-text badge
+title: "Title of the paper"
+authors: "Y. Name, A. Author, and B. Author"   # your name (`me:` in _config.yml) is bolded automatically
+date: 2025-01-01                  # sets sort order
+venue: "Journal 123, 456"
+arxiv: "2501.01230"               # QUOTED. Gives arXiv, SciX, and INSPIRE links
+journal: https://doi.org/...
+thumbnail: papers/2501.01230.webp  # optional; path under assets/images/. 336x252 (4:3) WebP crop of a figure
+tags: [first]                     # any of: first, student, lvk (labels in _data/badges.yml)
+role: "Writing Team & Core Analyst"   # optional; shown after author list (useful for collaboration papers)
+highlight: "Editor's Suggestion"  # optional; free-text badge
 coverage:                         # optional; press pills with outlet logo
   - outlet: aasnova               # key in _data/coverage.yml (aasnova, physics, astrobites, spacecom, astronomy, sciam)
     link: https://aasnova.org/...
@@ -46,7 +46,7 @@ coverage:                         # optional; press pills with outlet logo
 
 No body needed.
 
-**Author lists**: if T. Callister is 1st–3rd author, list names through T. Callister (then `, et al.` if more follow). Otherwise use `"A. Author et al. (incl. T. Callister)"`.
+**Author lists**: if you are 1st–3rd author, list names through yours (then `, et al.` if more follow). Otherwise use `"A. Author et al. (incl. Y. Name)"`.
 
 **New tag type**: add its label to `_data/badges.yml`, then add a `.badge.<tag>` rule and a `.chip[data-filter="<tag>"]` rule in `assets/css/main.scss` (copy the existing ones).
 
@@ -56,9 +56,9 @@ No body needed.
 
 ```yaml
 ---
-title: Non-parametric BBH populations paper in PRX
-date: 2024-04-01
-image: news/prx.jpeg     # optional; under assets/images/. Shown uncropped below the text
+title: New paper published
+date: 2025-01-01
+image: news/example.jpg   # optional; under assets/images/. Shown uncropped below the text
 ---
 A few sentences of markdown. [Links](https://example.com) work.
 ```
@@ -69,12 +69,12 @@ Put the files in `assets/images/gallery/`, then create `_gallery/short-name.md`:
 
 ```yaml
 ---
-title: Landscape of observed compact binary mergers
+title: Title of the figure
 order: 1                 # position on the page
-repo: https://github.com/gw-gallery/cbc-landscape   # optional
+repo: https://github.com/...   # optional
 images:                  # filenames only; .mp4 plays as a looping video
-  - cbc_landscape_gwtc3.png
-  - cbc_landscape_gwtc3_with_errors.png
+  - figure.png
+  - figure-variant.png
 ---
 Caption in markdown. Say "first/second", not "left/right": images stack on phones.
 ```
@@ -85,12 +85,12 @@ Caption in markdown. Say "first/second", not "left/right": images stack on phone
 
 ```yaml
 ---
-name: Celine Mayer
-role: Undergraduate, Williams '27
-start: 2026
-end: 2027             # leave out while current; adding it moves them to Alumni
-photo: celine.jpg     # optional; in assets/images/people/. Initials shown otherwise
-now: PhD student, MIT   # alumni only: current position
+name: Jane Doe
+role: Undergraduate, Class of 'YY
+start: 2025
+end: 2026             # leave out while current; adding it moves them to Alumni
+photo: jane.jpg       # optional; in assets/images/people/. Initials shown otherwise
+now: PhD student, ...  # alumni only: current position
 link: https://...     # optional personal page
 ---
 One or two sentences on their project (shown for current members only).
@@ -104,12 +104,12 @@ Photos display at 4:5; crop accordingly.
 
 ```yaml
 ---
-title: Black hole populations
+title: Research theme
 order: 1                  # position on page and among tiles
 color: 1                  # accent color, 1–5
-image: research/ngc6397-black-holes.jpg   # optional; under assets/images/
-credit: "Illustration: ESA/Hubble, N. Bartmann"   # optional; shown under the figure; markdown links OK
-papers: ["2302.07289", "2205.08574"]   # QUOTED arXiv IDs of papers in _papers/
+image: research/theme.jpg   # optional; under assets/images/
+credit: "Image: Source"   # optional; shown under the figure; markdown links OK
+papers: ["2501.01230", "2412.04560"]   # QUOTED arXiv IDs of papers in _papers/
 ---
 A paragraph describing the theme.
 ```
@@ -118,20 +118,20 @@ An ID not found in `_papers/` renders as "Missing paper".
 
 ## Update the CV
 
-`cv.md` front matter holds the `employment` and `education` lists (`years`, `title`, `place`; newest first; `<br>` in a title forces a line break). The header-card link to the full CV shows `pdf_desc` as its description. For the full CV, recompile the LaTeX and copy the PDF to `assets/Callister_CV.pdf` (same name, so links don't change).
+`cv.md` front matter holds the `employment` and `education` lists (`years`, `title`, `place`; newest first; `<br>` in a title forces a line break). The header-card link to the full CV shows `pdf_desc` as its description. For the full CV, copy the PDF to the path in `cv.md`'s `pdf:` field (also linked from `_config.yml`). Keep the same filename so links don't change.
 
 ## Site-wide settings
 
-`_config.yml` holds the name, search-engine description, contact links (home page), footer, side-strip image and credit, and the "Featured in" label for press pills. Page intros are the `intro:` field at the top of `research.md`, `group.md`, etc. The home bio is the body of `index.md`; the headshot is its `photo:` field.
+`_config.yml` holds the name, the author-list name to bold (`me:`), search-engine description, contact links (home page), footer, side-strip image and credit, and the "Featured in" label for press pills. Page intros are the `intro:` field at the top of `research.md`, `group.md`, etc. The home bio is the body of `index.md`; the headshot is its `photo:` field.
 
-`news.md`, `publications.md`, and `gallery.md` carry `redirect_from:` so the old site's URLs (`/news.html` etc.) forward to the new ones. Leave these in place; renaming a page's `permalink` needs a matching `redirect_from` too.
+`news.md`, `publications.md`, and `gallery.md` carry `redirect_from:` so older URLs (`/news.html` etc.) forward to the new ones. Remove them if you don't need them; renaming a page's `permalink` needs a matching `redirect_from` too.
 
 ## Preview locally
 
-Uses the conda env `personal-website-development` (Ruby + gems installed inside it):
+Needs Ruby and Bundler. Once, run `bundle install`; then:
 
 ```sh
-conda run --no-capture-output -n personal-website-development bundle exec jekyll serve --livereload
+bundle exec jekyll serve --livereload
 ```
 
 Then open http://localhost:4000. Restart the server after editing `_config.yml`; it isn't reloaded live.
