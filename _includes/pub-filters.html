@@ -1,0 +1,6 @@
+<div class="filters" role="group" aria-label="Filter publications">
+  <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+  {% for b in site.data.badges %}
+    <button class="chip" type="button" data-filter="{{ b[0] }}" aria-pressed="false">{{ b[1] }}</button>
+  {% endfor %}
+</div>

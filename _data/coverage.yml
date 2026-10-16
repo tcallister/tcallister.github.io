@@ -1,0 +1,20 @@
+# Press/coverage outlets for the `coverage:` field on papers → pill with logo.
+# logo: under assets/images/. label: default pill text (override per paper with `label:`).
+aasnova:
+  label: AAS Nova
+  logo: logos/aasnova.png   # black on transparent; inverted in dark mode (main.scss)
+physics:
+  label: Physics Viewpoint
+  logo: logos/physics.png
+astrobites:
+  label: Astrobites
+  logo: logos/astrobites.png
+spacecom:
+  label: Space.com
+  logo: logos/spacecom.png
+astronomy:
+  label: Astronomy
+  logo: logos/astronomy.png
+sciam:
+  label: Scientific American
+  logo: logos/sciam.png

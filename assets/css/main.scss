@@ -1,80 +1,328 @@
 ---
+# Front matter (even empty) tells Jekyll to compile this file to main.css
 ---
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
-@import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic');
+/* Ported from the design mockup (.claude/mockup.html).
+   Colors, fonts and sizes live in the variables below; change them here. */
 
-/*
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+:root {
+  /* Light palette: cool off-white ground, navy ink, pastel accents darkened for text */
+  --bg: #f6f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef0f5;
+  --fg: #242943;
+  --muted: #5f647c;
+  --rule: #dde0e9;
+  --accent: #2f7f9e;
+  /* a1/a4/a5 darkened to match a2's luminance (even badge text, ~4.5:1 on tints).
+     Previous: a1 #3f8fae, a4 #a77a45, a5 #4f9473 */
+  --a1: #33738c; --a2: #6e62a8; --a3: #b9645a; --a4: #8a6539; --a5: #3f765c;
+  --tint1: #e2f2f8; --tint2: #ecebf7; --tint3: #f8e8e5; --tint4: #f6eedf; --tint5: #e4f2ea;
+  --scrim: rgba(28, 31, 52, 0.62);
 
-	@include skel-breakpoints((
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)',
-		xxsmall: '(max-width: 360px)'
-	));
+  --serif: "Newsreader", Georgia, serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 
-	@include skel-layout((
-		reset: 'full',
-		boxModel: 'border',
-		grid: ( gutters: 2em ),
-		breakpoints: (
-			large: (
-				grid: ( gutters: 1.5em )
-			),
-			small: (
-				grid: ( gutters: 1.25em )
-			)
-		)
-	));
+  --measure: 760px;      /* text column width */
+  --card-radius: 16px;   /* tiles + CV card */
+  --thumb-radius: 10px;  /* publication thumbnails */
+  --news-img-w: 480px;   /* max width of News page images (most are text screenshots) */
+  --radius: 10px;        /* home headshot (+ group photos via --avatar-radius); matches --thumb-radius. Rejected 6px, 16px */
+  /* Group page photos: same shape as the home headshot. For ovals: radius 50%, ratio 5/6 (1 = circle) */
+  --avatar-ratio: 4/5;   /* width/height */
+  --avatar-radius: var(--radius);
+}
 
-	@mixin inner {
-		> .inner {
-			@include padding(4em, 0);
-			margin: 0 auto;
-			max-width: _size(inner);
-			width: calc(100% - 6em);
+/* Dark theme (secondary): follows the visitor's OS setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f2339; --surface: #262b44; --surface-2: #2c3150; --fg: #eceef7; --muted: #a6aac4;
+    --rule: rgba(212, 212, 255, 0.13); --accent: #8fd3ea;
+    /* a1/a2/a5 brightened to match a4's luminance. Previous: a1 #6fc3df, a2 #a99ee0, a5 #87c5a4 */
+    --a1: #81cbe3; --a2: #c2bae9; --a3: #ec8d81; --a4: #e7b788; --a5: #95ccae;
+    --tint1: rgba(111,195,223,.16); --tint2: rgba(141,130,196,.2); --tint3: rgba(236,141,129,.16);
+    --tint4: rgba(231,183,136,.16); --tint5: rgba(135,197,164,.16);
+    --scrim: rgba(14, 16, 30, 0.7);
+    color-scheme: dark;
+  }
+}
 
-			@include breakpoint(small) {
-				@include padding(3em, 0);
-				width: calc(100% - 3em);
-			}
-		}
-	}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--serif); font-size: 17px; line-height: 1.55;
+  margin: 0; padding-block: 0 96px;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
-// Base.
+/* Text column */
+.wrap { max-width: calc(var(--measure) + 96px); margin: 0 auto; padding-inline: 48px; }
 
-	@import 'base/page';
-	@import 'base/typography';
+/* ---------- Header: name + nav, then the page-top block (.band) ---------- */
+header.site {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px;
+  padding: 24px 12px 10px;
+  max-width: calc(var(--measure) + 64px); width: calc(100% - 32px); margin: 0 auto;
+}
+.name { font-size: 1.35rem; font-weight: 600; color: var(--fg); text-decoration: none; letter-spacing: .005em; }
+nav.top { display: flex; flex-wrap: wrap; gap: 4px 18px; font-family: var(--sans); font-size: .9rem; }
+nav.top a { color: var(--muted); text-decoration: none; padding-block: 2px; border-bottom: 2px solid transparent; }
+nav.top a:hover { color: var(--fg); }
+nav.top a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--a1); }
 
-// Component.
+/* Page-top block (bio, page title, intro); sits on the page ground. Rejected: slate card */
+.band {
+  max-width: calc(var(--measure) + 64px); width: calc(100% - 32px);
+  margin: 6px auto 0; padding: 4px 32px 0;
+}
+/* Sketched-chirp rule closing the band; canvas is added by site.js */
+.sig-rule { display: block; width: 100%; height: 29px; margin: 26px 0 10px; }
+.page-h { font-size: 1.7rem; font-weight: 600; margin: 22px 0 4px; text-wrap: balance; }
+.page-sub { color: var(--muted); font-size: .98rem; }
+.page-sub p { margin: 0 0 16px; }
+/* Lists in intros (e.g. Publications' SciX links): tight under the lead-in paragraph */
+.page-sub p:has(+ ul) { margin-bottom: 6px; }
+.page-sub ul { margin-top: 0; }
 
-	@import 'components/section';
-	@import 'components/form';
-	@import 'components/box';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/table';
-	@import 'components/button';
-	@import 'components/tiles';
-	@import 'components/contact-method';
-	@import 'components/spotlights';
+/* ---------- Home ---------- */
+.intro { display: grid; grid-template-columns: 128px 1fr; gap: 28px; align-items: start; padding-top: 24px; }
+.photo {
+  width: 128px; aspect-ratio: 4/5; max-width: 100%; border-radius: var(--radius); object-fit: cover;
+  background: linear-gradient(160deg, #3c4470, #5a5292 55%, #8a5d6e);
+  display: grid; place-items: center; font-family: var(--sans); font-size: .75rem; color: var(--muted);
+}
+.intro p { margin: 0 0 12px; min-width: 0; }
+.intro p:first-child { font-size: 1.12rem; }
+/* Contact links under the bio. Rejected: stacked under the photo; full-width row under photo + bio */
+.contact { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--sans); font-size: .88rem; color: var(--muted); margin-top: 4px; }
+.contact a { color: var(--muted); }
+.contact a:hover { color: var(--accent); }
 
-// Layout.
+.label { font-family: var(--sans); font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+section.block { padding-top: 30px; }
+/* Keep the `hidden` attribute working on elements we give a display value (e.g. .pub grid, used by filter chips) */
+[hidden] { display: none !important; }
 
-	@import 'layout/header';
-	@import 'layout/banner';
-	@import 'layout/main';
-	@import 'layout/contact';
-	@import 'layout/footer';
-	@import 'layout/wrapper';
-	@import 'layout/menu';
+/* Tiles: blurred, tinted figure that sharpens on hover */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tile {
+  position: relative; display: block; height: 150px; border-radius: var(--card-radius); overflow: hidden;
+  text-decoration: none; color: #fff; isolation: isolate; background: var(--surface-2);
+}
+.tile .img {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: blur(3px) saturate(.55); transform: scale(1.1);
+  transition: filter .6s ease, transform .6s ease;
+}
+.tile .tint { position: absolute; inset: 0; opacity: .72; transition: opacity .5s ease; }
+.tile .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, var(--scrim)); }
+.tile .txt { position: absolute; left: 12px; right: 12px; bottom: 10px; z-index: 2; }
+.tile .t { font-weight: 600; font-size: 1.02rem; line-height: 1.2; text-wrap: balance; display: block; }
+.tile .d { font-family: var(--sans); font-size: .76rem; line-height: 1.3; opacity: .9; display: block; margin-top: 3px; }
+.tile:hover .img, .tile:focus-visible .img { filter: blur(0) saturate(1); transform: scale(1.02); }
+.tile:hover .tint, .tile:focus-visible .tint { opacity: .12; }
+/* Without a figure, keep the tint solid on hover */
+.tile:not(:has(.img)):hover .tint { opacity: .85; }
+
+/* News feed (home) */
+.feed { list-style: none; margin: 0; padding: 0; }
+.feed li + li { border-top: 1px solid var(--rule); }
+.feed a { display: grid; grid-template-columns: 76px 1fr auto; gap: 14px; align-items: baseline; padding-block: 8px; text-decoration: none; color: var(--fg); }
+.feed a:hover .ft { color: var(--accent); }
+.feed .fd { font-family: var(--sans); font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.feed .ft { min-width: 0; }
+.feed .fa { font-family: var(--sans); color: var(--muted); font-size: .9rem; }
+.more { font-family: var(--sans); font-size: .85rem; display: inline-block; margin-top: 10px; }
+
+/* ---------- Publications ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; font-family: var(--sans); }
+.chip {
+  font: inherit; font-size: .84rem; padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: transparent; color: var(--muted);
+}
+.chip:hover { color: var(--fg); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+/* Tag chips take their badge's colors: outlined when off, filled like the badge when on */
+.chip[data-filter="first"]   { --chip: var(--a1); --chip-tint: var(--tint1); }
+.chip[data-filter="lvk"]     { --chip: var(--a2); --chip-tint: var(--tint2); }
+.chip[data-filter="student"] { --chip: var(--a5); --chip-tint: var(--tint5); }
+.chip:not([data-filter="all"]) { color: var(--chip, var(--muted)); border-color: var(--chip, var(--rule)); }
+.chip:not([data-filter="all"])[aria-pressed="true"] { background: var(--chip-tint, transparent); font-weight: 600; }
+
+.year { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .1em; color: var(--muted); margin: 26px 0 4px; }
+.pub { display: grid; grid-template-columns: 112px 1fr; gap: 18px; padding-block: 14px; }
+.pub + .pub { border-top: 1px solid var(--rule); }
+.thumb {
+  width: 112px; aspect-ratio: 4/3; max-width: 100%; object-fit: cover;
+  border-radius: var(--thumb-radius); border: 1px solid var(--rule); background: var(--surface-2);
+}
+.pub > div { min-width: 0; }
+.pub .pt { font-weight: 600; line-height: 1.3; margin: 0 0 3px; text-wrap: balance; font-size: 1.02rem; }
+.pub .pa { font-size: .93rem; margin: 0; }
+.pub .pa b { font-weight: 600; }
+.pub .pv { font-size: .9rem; font-style: italic; color: var(--muted); margin: 1px 0 6px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--sans); font-size: .76rem; }
+.btn {
+  font: inherit; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 1px 10px;
+  text-decoration: none; color: var(--fg); background: var(--surface);
+}
+/* Inline icon inside a button (e.g. GitHub mark) */
+.btn .icon { width: 1.05em; height: 1.05em; vertical-align: -0.17em; margin-right: 5px; }
+.btn:hover, .btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+/* Press-coverage pills (`coverage:` field; outlets in _data/coverage.yml) */
+.btn.press .icon { border-radius: 3px; }
+/* Own line below the link buttons, left-aligned. Rejected: right-justified on the button row */
+.press-row { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 3px; }  /* + the .meta row gap (6px) */
+.press-label { font-family: var(--serif); font-style: italic; font-size: .9rem; color: var(--muted); }  /* matches venue line */
+/* Gray fill; keeps the faint --rule border. Rejected: outline like the link buttons; border-color transparent */
+.btn.press { background: var(--surface-2); }
+@media (prefers-color-scheme: dark) { .btn.aasnova .icon { filter: invert(1); } }
+/* Balanced title on the left, badge column on the right (wraps past max-width).
+   Rejected: badges at the end of / below the button row; floated into the title or author line
+   (floats switch off text-wrap: balance) */
+.ptrow { display: flex; align-items: flex-start; gap: 14px; }
+.ptrow .pt { flex: 1; min-width: 0; }
+.badges {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  flex: 0 1 auto; max-width: 35%; justify-content: flex-end; margin-top: 1px;
+  font-family: var(--sans); font-size: .76rem; line-height: 1.55;
+}
+.badge { white-space: nowrap; border-radius: 999px; padding: 1px 10px; font-weight: 600; letter-spacing: .02em; }
+.badge.lvk { background: var(--tint2); color: var(--a2); }
+.badge.student { background: var(--tint5); color: var(--a5); }
+.badge.first { background: var(--tint1); color: var(--a1); }
+.badge.highlight { background: var(--tint4); color: var(--a4); }  /* free-text `highlight` field; not a filter */
+
+/* ---------- News page ---------- */
+.news-item { padding-block: 18px; scroll-margin-top: 16px; }
+.news-item + .news-item { border-top: 1px solid var(--rule); }
+.news-item h2 { font-size: 1.15rem; font-weight: 600; margin: 2px 0 6px; line-height: 1.3; }
+.news-item .fd { font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+.news-item p { margin: 0 0 10px; }
+.news-item img { max-width: 100%; border-radius: var(--thumb-radius); }
+.news-img { display: block; width: fit-content; max-width: min(100%, var(--news-img-w)); margin: 4px 0 6px; }
+.news-img img { display: block; border: 1px solid var(--rule); }
+
+/* ---------- Gallery page ---------- */
+.gal-item { padding-block: 18px; scroll-margin-top: 16px; }
+/* Rules between entries: sketched stochastic-background noise, drawn by site.js */
+.noise-rule { display: block; width: 100%; height: 26px; margin: 6px 0; }
+.gal-item h2 { font-size: 1.15rem; font-weight: 600; margin: 2px 0 10px; line-height: 1.3; }
+.gal-item p { margin: 10px 0; }
+.gal-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gal-figs.one { grid-template-columns: 1fr; max-width: calc(50% - 6px); }
+.gal-figs img, .gal-figs video {
+  display: block; width: 100%; border-radius: var(--thumb-radius);
+  border: 1px solid var(--rule); background: var(--surface);
+}
+
+/* ---------- Research page ---------- */
+.res-item { padding-block: 22px; scroll-margin-top: 16px; }
+.res-item + .res-item { border-top: 1px solid var(--rule); }
+/* Short bar in the theme's tile color ties each section to its home tile */
+.res-item h2 { font-size: 1.25rem; font-weight: 600; margin: 0 0 8px; line-height: 1.3; }
+.res-item h2::before { content: ""; display: block; width: 36px; height: 3px; border-radius: 2px; background: var(--theme); margin-bottom: 10px; }
+.res-body p { margin: 0 0 10px; }
+/* Figure floats right; text wraps around it (was a separate 220px column). Widths tried: 220, 253 */
+.res-body { display: flow-root; }
+.res-fig { float: right; width: 240px; margin: 4px 0 10px 22px; }
+.res-fig figcaption { font-family: var(--sans); font-size: .72rem; color: var(--muted); margin-top: 4px; padding-left: 6px; }
+.res-fig figcaption a { color: inherit; }
+.res-body img { display: block; width: 100%; border-radius: var(--thumb-radius); border: 1px solid var(--rule); background: var(--surface); }
+.res-item .label { margin: 14px 0 6px; }
+.res-papers { margin: 0; padding-left: 1.1em; font-size: .93rem; }
+.res-papers li { margin-bottom: 3px; }
+.res-papers a { color: var(--fg); text-decoration-color: var(--rule); }
+.res-papers a:hover { color: var(--accent); text-decoration-color: currentColor; }
+.res-papers .ry { font-family: var(--sans); font-size: .78rem; color: var(--muted); }
+
+/* ---------- Group page ---------- */
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; }
+.person { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: start; scroll-margin-top: 16px; }
+.avatar {
+  width: 72px; aspect-ratio: var(--avatar-ratio); border-radius: var(--avatar-radius); object-fit: cover; border: 1px solid var(--rule);
+  display: grid; place-items: center; font-family: var(--sans); font-weight: 600; font-size: 1.2rem; letter-spacing: .04em;
+}
+/* No photo: initials on a pastel, cycling through the badge palette */
+.avatar.t1 { background: var(--tint1); color: var(--a1); }
+.avatar.t2 { background: var(--tint2); color: var(--a2); }
+.avatar.t3 { background: var(--tint3); color: var(--a3); }
+.avatar.t4 { background: var(--tint4); color: var(--a4); }
+.avatar.t5 { background: var(--tint5); color: var(--a5); }
+.person h3 { font-size: 1.05rem; font-weight: 600; margin: 4px 0 1px; line-height: 1.3; }
+.person h3 a { color: inherit; }
+.person h3 a:hover { color: var(--accent); }
+.person .role { font-family: var(--sans); font-size: .8rem; color: var(--muted); margin: 0 0 6px; }
+.person p:not(.role) { font-size: .93rem; margin: 0; }
+.alumni { list-style: none; margin: 0; padding: 0; }
+.alumni li { padding-block: 8px; scroll-margin-top: 16px; }
+.alumni li + li { border-top: 1px solid var(--rule); }
+.alumni .an { font-weight: 600; margin-right: 10px; }
+.alumni .an a { color: inherit; }
+.alumni .ar, .alumni .now { font-family: var(--sans); font-size: .82rem; color: var(--muted); }
+.alumni .now { display: block; }
+
+/* CV page: years column + title / place (styled like the alumni list) */
+.cv-list { list-style: none; margin: 0; padding: 0; }
+.cv-list li { display: grid; grid-template-columns: 7.5em 1fr; gap: 12px; padding-block: 6px; }
+/* One rule between sections (rejected: rule between every item, too busy) */
+.cv-block + .cv-block { border-top: 1px solid var(--rule); margin-top: 24px; padding-top: 24px; }
+.cv-list .cy { font-family: var(--sans); font-size: .82rem; color: var(--muted); padding-top: 2px; }
+.cv-list .ct { font-weight: 600; display: block; }
+.cv-list .cp { font-family: var(--sans); font-size: .82rem; color: var(--muted); display: block; }
+/* Full-CV link in the CV page's header card (cv-card.html).
+   Colors via --cv-bg (fill), --cv-ink (title), --cv-dl ("PDF ↓").
+   Rejected: flat --tint1 fill (too plain); --a2 -> --a3 gradient at tile opacity with white text (too dark);
+   accent-colored titles; finalists were blue (tint1/a1) and amber (tint4/a4). */
+.cv-card {
+  --cv-bg: var(--tint5); --cv-ink: var(--fg); --cv-dl: var(--a5);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  max-width: 560px; margin-top: 4px; padding: 12px 18px;
+  background: var(--cv-bg); border: 1px solid transparent; border-radius: var(--card-radius);
+  text-decoration: none; color: var(--cv-ink);
+}
+.cv-card:hover { border-color: var(--cv-dl); }
+.cv-card-t { display: block; font-weight: 600; font-size: 1.05rem; }
+.cv-card-d { display: block; font-family: var(--sans); font-size: .82rem; color: var(--muted); }
+.cv-card-dl { font-family: var(--sans); font-size: .85rem; font-weight: 600; white-space: nowrap; color: var(--cv-dl); }
+
+
+footer.site { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: .8rem; color: var(--muted); }
+
+/* ---------- Side strip: wide screens only, fixed in the left margin ---------- */
+.side { display: none; position: fixed; top: 0; bottom: 0; left: 0; height: 100%; z-index: 0; }
+/* Image credit pinned to the strip's bottom-left; literal color because it always sits on slate */
+.side-credit {
+  display: none; position: fixed; left: 0; bottom: 0; z-index: 1; margin: 0; padding: 0 10px 8px;
+  font-family: var(--sans); line-height: 1.3; color: rgba(188, 192, 220, .55);
+  /* One line: scale with strip width (~28em of text for the current credit), capped at .58rem */
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font-size: clamp(5.5px, calc((var(--side-w) - 20px) / 28), .58rem);
+}
+@media (min-width: 1180px) {
+  :root { --side-w: clamp(110px, calc((100vw - var(--measure) - 64px) / 2 - 56px), 420px); }
+  .side { display: block; width: var(--side-w); }
+  .side-credit { display: block; width: var(--side-w); }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 680px) {
+  .wrap { padding-inline: 20px; }
+  .band { width: calc(100% - 24px); padding-inline: 20px; }
+  header.site { width: calc(100% - 24px); }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .intro { grid-template-columns: 1fr; gap: 16px; }
+  .photo { width: 96px; }
+  .pub { grid-template-columns: 80px 1fr; gap: 12px; }
+  .thumb { width: 80px; }
+  .gal-figs, .gal-figs.one { grid-template-columns: 1fr; max-width: none; }
+  .people { grid-template-columns: 1fr; }
+  .res-fig { float: none; width: auto; margin: 0 0 12px; }
+  .feed a { grid-template-columns: 64px 1fr; }
+  .feed .fa { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile .img, .tile .tint { transition: none; }
+}

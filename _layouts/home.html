@@ -1,72 +1,56 @@
-<!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
-{% include head.html %}
-
-<body>
-
-    {% include header.html %}
-
-    <!-- Banner -->
-    <section id="banner" class="major">
-        <div class="inner">
-
-            <div class="row">
-
-                <div class="9u 12u$(small)">
-                    <header class="major">
-                        <h1>{{ page.landing-title }}</h1>
-                    </header>
-                    <p>{{ site.description }}</p>
-                </div>
-                <div class="3u$ 12u$(small)">
-                    <img src="assets/images/me.jpg" align="left" width="250px" style="margin: 0px 30px 30px 0px; border-radius: 30% / 50%;"/>
-                </div>
-
-            </div>
-
-            <!--
-            <div class="content">
-                <p style="text-transform: uppercase;">{{ site.description }}</p>
-                <img src="assets/images/me.jpg" align="left" width="150px" style="margin: 0px 30px 30px 0px; border-radius: 90%;"/>
-                <ul class="actions">
-                    <li><a href="#one" class="button next scrolly">Get Started</a></li>
-                </ul>
-            </div>
-            -->
-        </div>
-    </section>
-
-    <!-- Main -->
-    <div id="main">
-
-        <!-- One -->
-        {% include tiles.html %}
-
-        <!-- Two -->
-        <!--
-        <section id="two">
-            <div class="inner">
-                <header class="major">
-                    <h2>Massa libero</h2>
-                </header>
-                <p>{{ content }}</p>
-                <ul class="actions">
-                    <li><a href="landing.html" class="button next">Get Started</a></li>
-                </ul>
-            </div>
-        </section>
-        -->
-
+---
+layout: default
+---
+{% comment %}
+  Landing page: bio (body of index.md) → research tiles (_research/) → 3 latest news.
+{% endcomment %}
+<div class="band">
+  <section class="intro">
+    {% if page.photo %}
+      <img class="photo" src="{{ '/assets/images/' | append: page.photo | relative_url }}" alt="{{ site.author }}">
+    {% else %}
+      <div class="photo" role="img" aria-label="Headshot placeholder">photo</div>
+    {% endif %}
+    <div>
+      {{ content }}
+      <div class="contact">
+        {% for l in site.links %}
+          {% if l.url != "" %}<a href="{{ l.url }}">{{ l.label }}</a>{% else %}<span>{{ l.label }}</span>{% endif %}
+        {% endfor %}
+      </div>
     </div>
+  </section>
+</div>
 
-    {% include footer.html %}
+<main class="wrap">
+  <section class="block">
+    {% comment %} One tile per research theme (_research/), linking to its section of /research/ {% endcomment %}
+    <h2 class="label">Research</h2>
+    {% assign tiles = site.research | sort: "order" %}
+    <div class="tiles">
+      {% for t in tiles %}
+        <a class="tile" href="{{ '/research/#' | append: t.slug | relative_url }}">
+          {% if t.image %}<span class="img" style="background-image:url('{{ '/assets/images/' | append: t.image | relative_url }}')"></span>{% endif %}
+          <span class="tint" style="background:var(--a{{ t.color | default: 1 }})"></span>
+          <span class="scrim"></span>
+          <span class="txt"><span class="t">{{ t.title }}</span>{% if t.desc %}<span class="d">{{ t.desc }}</span>{% endif %}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
 
-</body>
-
-</html>
+  <section class="block">
+    <h2 class="label">Recent news</h2>
+    {% assign news = site.news | sort: "date" | reverse %}
+    <ul class="feed">
+      {% for n in news limit: 3 %}
+        <li><a href="{{ '/news/' | relative_url }}#{{ n.slug }}">
+          <span class="fd">{{ n.date | date: "%b %Y" }}</span>
+          <span class="ft">{{ n.title }}</span>
+          <span class="fa" aria-hidden="true">→</span>
+        </a></li>
+      {% endfor %}
+    </ul>
+    <a class="more" href="{{ '/news/' | relative_url }}">All news →</a>
+  </section>
+</main>

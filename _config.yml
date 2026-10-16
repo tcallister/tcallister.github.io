@@ -1,48 +1,68 @@
-# site settings
+# ---------- Site info ----------
 title: Tom Callister
-subtitle: 
-email: thomas.a.callister@gmail.com
-description: I'm a Schmidt AI in Science Fellow in the University of Chicago's Kavli Institute for Cosmological Physics. I'm an expert in the analysis and astrophysics of gravitational waves, with an emphasis on observationally understanding the demographics of merging black holes and neutron stars.<br><br>Scroll down to find out more about me and my work!
-baseurl: "" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+description: >-
+  Assistant Professor of Astronomy at Williams College.
+  Gravitational-wave astrophysics: populations of merging black holes and
+  neutron stars, and the stochastic gravitational-wave background.
 author: Tom Callister
-street_address: The University of Chicago 
-street_address_2: 5640 S. Ellis Ave.
-city: Chicago
-state: IL
-zip_code: 60637
-country: United States of America
-phone: 
+url: "https://tcallister.github.io"
+baseurl: ""
 
-# homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 8
+# Name as it appears in author lists; bolded automatically on the Publications page
+me: "T. Callister"
 
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
-socials:
-  GitHub: https://github.com/tcallister
-  GitLab:
-  Google-Plus: 
-  Instagram:
-  LinkedIn: 
-  Twitter: 
-  Facebook:
-  Slack:
+# Contact links shown under the bio on the home page (order is preserved)
+links:
+  - label: tac7@williams.edu
+    url: mailto:tac7@williams.edu
+  - label: GitHub
+    url: https://github.com/tcallister
+  - label: SciX
+    url: https://scixplorer.org/public-libraries/4dPzXD5qTGOB007HInq-DA
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=yFMi2DAAAAAJ
+  - label: CV (pdf)
+    url: /assets/Callister_CV.pdf   # copy of the compiled LaTeX CV (see README)
 
-# build settings
+footer: "Williams College · Department of Physics and Astronomy · Williamstown, MA"
+
+# Side strip (left margin, wide screens only): optional faint image over the slate ground (path or URL)
+strip_image: "/assets/images/ligo-bbh-illustration.jpg"
+# Small credit in the strip's bottom-left corner.
+strip_credit: "Image: LIGO/Caltech/MIT/Sonoma State (Aurore Simonnet)"
+
+# Press-coverage pills (`coverage:` on papers): muted lead-in text before them ("" = none)
+press_label: "Featured in"
+
+# ---------- Content collections (one markdown file per item) ----------
+# output: false → items are listed on a page but get no URL of their own
+collections:
+  papers:
+    output: false
+  news:
+    output: false
+  gallery:
+    output: false
+  people:
+    output: false
+  research:        # themes: Research page sections + home tiles
+    output: false
+
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+
+# ---------- Build ----------
+theme: null   # GitHub Pages otherwise injects its default "Primer" theme
 markdown: kramdown
-
 sass:
   style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from   # old URLs (/news.html etc.) → new ones; see `redirect_from:` in page front matter
 
 exclude:
-- "*.gemspec"
-- LICENSE.md
-- CONTRIBUTING.md
-- README.md 
-
-gems:
-- jekyll-sitemap
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

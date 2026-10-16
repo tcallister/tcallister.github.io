@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" data-rule="{{ page.rule | default: 'chirp' }}"{% if site.strip_image %} data-strip-img="{{ site.strip_image }}"{% endif %}>
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <canvas class="side" id="side-l" aria-hidden="true"></canvas>
+  {% if site.strip_image and site.strip_credit %}<p class="side-credit">{{ site.strip_credit }}</p>{% endif %}
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+</html>
