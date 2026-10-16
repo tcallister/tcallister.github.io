@@ -19,19 +19,11 @@
   --tint1: #e2f2f8; --tint2: #ecebf7; --tint3: #f8e8e5; --tint4: #f6eedf; --tint5: #e4f2ea;
   --scrim: rgba(28, 31, 52, 0.62);
 
-  /* Header card (slate), same in both themes */
-  --band-bg: #2f355a;
-  --band-fg: #eef0f8;
-  --band-muted: #bcc0dc;
-  --band-accent: #a7dcf0;
-  --band-rule: rgba(212, 212, 255, 0.16);
-
   --serif: "Newsreader", Georgia, serif;
   --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 
-  --sketch-ink: #1a1c24;
   --measure: 760px;      /* text column width */
-  --card-radius: 16px;   /* header card + tiles */
+  --card-radius: 16px;   /* tiles + CV card */
   --thumb-radius: 10px;  /* publication thumbnails */
   --news-img-w: 480px;   /* max width of News page images (most are text screenshots) */
   --radius: 10px;        /* home headshot (+ group photos via --avatar-radius); matches --thumb-radius. Rejected 6px, 16px */
@@ -50,7 +42,6 @@
     --tint1: rgba(111,195,223,.16); --tint2: rgba(141,130,196,.2); --tint3: rgba(236,141,129,.16);
     --tint4: rgba(231,183,136,.16); --tint5: rgba(135,197,164,.16);
     --scrim: rgba(14, 16, 30, 0.7);
-    --sketch-ink: #e6e8f2;
     color-scheme: dark;
   }
 }
@@ -68,7 +59,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* Text column */
 .wrap { max-width: calc(var(--measure) + 96px); margin: 0 auto; padding-inline: 48px; }
 
-/* ---------- Header: name + nav, then the slate card ---------- */
+/* ---------- Header: name + nav, then the page-top block (.band) ---------- */
 header.site {
   display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px;
   padding: 24px 12px 10px;
@@ -80,24 +71,15 @@ nav.top a { color: var(--muted); text-decoration: none; padding-block: 2px; bord
 nav.top a:hover { color: var(--fg); }
 nav.top a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--a1); }
 
+/* Page-top block (bio, page title, intro); sits on the page ground. Rejected: slate card */
 .band {
-  background: var(--band-bg); color: var(--band-fg);
   max-width: calc(var(--measure) + 64px); width: calc(100% - 32px);
-  margin: 6px auto 0; border-radius: var(--card-radius);
-  padding: 4px 32px 26px;
+  margin: 6px auto 0; padding: 4px 32px 0;
 }
-/* band_style: plain (in _config.yml) drops the card; page-top content sits on the ground */
-:root[data-band="plain"] {
-  --band-bg: var(--bg); --band-fg: var(--fg); --band-muted: var(--muted);
-  --band-accent: var(--accent); --band-rule: var(--rule);
-}
-:root[data-band="plain"] .band { background: none; padding-bottom: 0; }
-/* Sketched-chirp rule under the plain band; canvas is added by site.js */
+/* Sketched-chirp rule closing the band; canvas is added by site.js */
 .sig-rule { display: block; width: 100%; height: 29px; margin: 26px 0 10px; }
-.band a { color: var(--band-accent); }
-.band :focus-visible { outline-color: var(--band-accent); }
 .page-h { font-size: 1.7rem; font-weight: 600; margin: 22px 0 4px; text-wrap: balance; }
-.page-sub { color: var(--band-muted); font-size: .98rem; }
+.page-sub { color: var(--muted); font-size: .98rem; }
 .page-sub p { margin: 0 0 16px; }
 /* Lists in intros (e.g. Publications' SciX links): tight under the lead-in paragraph */
 .page-sub p:has(+ ul) { margin-bottom: 6px; }
@@ -108,21 +90,19 @@ nav.top a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--a1
 .photo {
   width: 128px; aspect-ratio: 4/5; max-width: 100%; border-radius: var(--radius); object-fit: cover;
   background: linear-gradient(160deg, #3c4470, #5a5292 55%, #8a5d6e);
-  display: grid; place-items: center; font-family: var(--sans); font-size: .75rem; color: var(--band-muted);
+  display: grid; place-items: center; font-family: var(--sans); font-size: .75rem; color: var(--muted);
 }
 .intro p { margin: 0 0 12px; min-width: 0; }
 .intro p:first-child { font-size: 1.12rem; }
 /* Contact links under the bio. Rejected: stacked under the photo; full-width row under photo + bio */
-.contact { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--sans); font-size: .88rem; color: var(--band-muted); margin-top: 4px; }
-.band .contact a { color: var(--band-muted); }
-.band .contact a:hover { color: var(--band-accent); }
+.contact { display: flex; flex-wrap: wrap; gap: 6px 16px; font-family: var(--sans); font-size: .88rem; color: var(--muted); margin-top: 4px; }
+.contact a { color: var(--muted); }
+.contact a:hover { color: var(--accent); }
 
 .label { font-family: var(--sans); font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
 section.block { padding-top: 30px; }
 /* Keep the `hidden` attribute working on elements we give a display value (e.g. .pub grid, used by filter chips) */
 [hidden] { display: none !important; }
-/* Read by screen readers, not shown (e.g. the tiles' heading when they replace the menu) */
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* Tiles: blurred, tinted figure that sharpens on hover */
 .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -159,15 +139,15 @@ section.block { padding-top: 30px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; font-family: var(--sans); }
 .chip {
   font: inherit; font-size: .84rem; padding: 4px 12px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--band-rule); background: transparent; color: var(--band-muted);
+  border: 1px solid var(--rule); background: transparent; color: var(--muted);
 }
-.chip:hover { color: var(--band-fg); }
-.chip[aria-pressed="true"] { background: var(--band-fg); color: var(--band-bg); border-color: var(--band-fg); }
+.chip:hover { color: var(--fg); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 /* Tag chips take their badge's colors: outlined when off, filled like the badge when on */
 .chip[data-filter="first"]   { --chip: var(--a1); --chip-tint: var(--tint1); }
 .chip[data-filter="lvk"]     { --chip: var(--a2); --chip-tint: var(--tint2); }
 .chip[data-filter="student"] { --chip: var(--a5); --chip-tint: var(--tint5); }
-.chip:not([data-filter="all"]) { color: var(--chip, var(--band-muted)); border-color: var(--chip, var(--band-rule)); }
+.chip:not([data-filter="all"]) { color: var(--chip, var(--muted)); border-color: var(--chip, var(--rule)); }
 .chip:not([data-filter="all"])[aria-pressed="true"] { background: var(--chip-tint, transparent); font-weight: 600; }
 
 .year { font-family: var(--sans); font-size: .8rem; font-weight: 600; letter-spacing: .1em; color: var(--muted); margin: 26px 0 4px; }
@@ -196,29 +176,18 @@ section.block { padding-top: 30px; }
 /* Own line below the link buttons, left-aligned. Rejected: right-justified on the button row */
 .press-row { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 3px; }  /* + the .meta row gap (6px) */
 .press-label { font-family: var(--serif); font-style: italic; font-size: .9rem; color: var(--muted); }  /* matches venue line */
-[data-press="fill"] .btn.press { background: var(--surface-2); }  /* keeps the faint --rule border; rejected: border-color transparent */
-[data-press="fill"] .btn.press:hover { border-color: var(--accent); }
+/* Gray fill; keeps the faint --rule border. Rejected: outline like the link buttons; border-color transparent */
+.btn.press { background: var(--surface-2); }
 @media (prefers-color-scheme: dark) { .btn.aasnova .icon { filter: invert(1); } }
-/* Badges sit together at the right end of the button row */
-.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }
-/* badge_place: right — fill the space left after the buttons and wrap within it, right-aligned;
-   with less than min-width left, the group drops to its own line */
-[data-badges="right"] .badges { flex: 1 1 0; min-width: 14em; justify-content: flex-end; }
-/* badge_place: row (in _config.yml) puts them on their own line, left-aligned */
-[data-badges="row"] .badges { flex-basis: 100%; margin-left: 0; margin-top: 2px; }
-/* badge_place: title — balanced title on the left, badge column on the right (wraps past max-width) */
+/* Balanced title on the left, badge column on the right (wraps past max-width).
+   Rejected: badges at the end of / below the button row; floated into the title or author line
+   (floats switch off text-wrap: balance) */
 .ptrow { display: flex; align-items: flex-start; gap: 14px; }
 .ptrow .pt { flex: 1; min-width: 0; }
-.ptrow .badges {
+.badges {
+  display: flex; flex-wrap: wrap; gap: 6px;
   flex: 0 1 auto; max-width: 35%; justify-content: flex-end; margin-top: 1px;
   font-family: var(--sans); font-size: .76rem; line-height: 1.55;
-}
-/* badge_place: title-float / authors — badges float top-right of that line; lines below use the full width.
-   (Floats switch off text-wrap: balance, hence `authors` as the default.) */
-.pt .badges, .pa .badges {
-  float: right; max-width: 55%; justify-content: flex-end;  /* past max-width, whole badges wrap to a new row */
-  margin: 1px 0 4px 14px;
-  font-family: var(--sans); font-size: .76rem; font-weight: 400; line-height: 1.55;
 }
 .badge { white-space: nowrap; border-radius: 999px; padding: 1px 10px; font-weight: 600; letter-spacing: .02em; }
 .badge.lvk { background: var(--tint2); color: var(--a2); }
@@ -312,9 +281,8 @@ section.block { padding-top: 30px; }
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
   max-width: 560px; margin-top: 4px; padding: 12px 18px;
   background: var(--cv-bg); border: 1px solid transparent; border-radius: var(--card-radius);
-  text-decoration: none;
+  text-decoration: none; color: var(--cv-ink);
 }
-.band .cv-card { color: var(--cv-ink); }   /* .band scope needed to beat `.band a` */
 .cv-card:hover { border-color: var(--cv-dl); }
 .cv-card-t { display: block; font-weight: 600; font-size: 1.05rem; }
 .cv-card-d { display: block; font-family: var(--sans); font-size: .82rem; color: var(--muted); }
@@ -322,15 +290,6 @@ section.block { padding-top: 30px; }
 
 
 footer.site { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: .8rem; color: var(--muted); }
-
-/* sketch_place: footer — full-width shaded band of sketched signals; canvas drawn by site.js */
-:root[data-sketch="footer"] body { padding-bottom: 0; }
-footer.sketch-foot {
-  margin-top: 72px; padding: 6px 0 22px; border-top: 0;
-  background: linear-gradient(180deg, #2f355a, #232845); color: #bcc0dc;  /* literal: plain band remaps --band-* */
-}
-:root[data-strip="ink"] footer.sketch-foot { background: var(--surface-2); color: var(--muted); }
-#foot-sketch { display: block; width: 100%; height: 96px; }
 
 /* ---------- Side strip: wide screens only, fixed in the left margin ---------- */
 .side { display: none; position: fixed; top: 0; bottom: 0; left: 0; height: 100%; z-index: 0; }

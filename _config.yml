@@ -26,31 +26,13 @@ links:
 
 footer: "Williams College · Department of Physics and Astronomy · Williamstown, MA"
 
-# Sketched GW-signal art: "footer" (band at page bottom) or "side" (strip in left margin, wide screens only)
-sketch_place: side
-# Its look: "slate" (colored sketches on slate), "ink" (dark sketches on light ground), or "blank" (slate, no sketches; side only)
-strip_style: blank
-# Optional faint image over the side strip (path or URL). LIGO illustration.
+# Side strip (left margin, wide screens only): optional faint image over the slate ground (path or URL)
 strip_image: "/assets/images/ligo-bbh-illustration.jpg"
 # Small credit in the strip's bottom-left corner.
 strip_credit: "Image: LIGO/Caltech/MIT/Sonoma State (Aurore Simonnet)"
 
-# Publication badges (Student-authored, LVK, ...): "right" (end of the button row), "row" (own row below, left-aligned),
-# "title" (badge column beside a balanced title), "title-float" (floated into the title; disables balanced
-# wrapping), or "authors" (floated into the author line)
-badge_place: title
-
-# Press-coverage pills (`coverage:` on papers; own line below the buttons).
-# press_label: muted lead-in text ("" = none). press_style: "outline" (like the link buttons) or "fill" (borderless gray)
+# Press-coverage pills (`coverage:` on papers): muted lead-in text before them ("" = none)
 press_label: "Featured in"
-press_style: fill
-
-# Home-page navigation: "tiles" (no header menu on the home page; the tiles are the menu)
-# or "menu" (header menu on every page; tiles are the research themes in _research/)
-home_nav: menu
-
-# Page-top block (bio, page title): "card" (slate card) or "plain" (no card, page colors)
-band_style: plain
 
 # ---------- Content collections (one markdown file per item) ----------
 # output: false → items are listed on a page but get no URL of their own

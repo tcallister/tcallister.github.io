@@ -12,16 +12,13 @@
     <div class="thumb" aria-hidden="true"></div>
   {% endif %}
   <div>
-    {% comment %}
-      badge_place: title       → title (balanced) and a badge column side by side
-      badge_place: title-float / authors → badges float right on that line; text wraps around them
-    {% endcomment %}
-    {% if site.badge_place == 'title' and badges != '' %}
+    {% comment %} Balanced title with a badge column beside it {% endcomment %}
+    {% if badges != '' %}
       <div class="ptrow"><p class="pt">{{ p.title }}</p>{{ badges }}</div>
     {% else %}
-      <p class="pt">{% if site.badge_place == 'title-float' %}{{ badges }}{% endif %}{{ p.title }}</p>
+      <p class="pt">{{ p.title }}</p>
     {% endif %}
-    <p class="pa">{% if site.badge_place == 'authors' %}{{ badges }}{% endif %}{{ p.authors | replace: site.me, me_bold }}{% if p.role %} (<b>{{ p.role }}</b>){% endif %}</p>
+    <p class="pa">{{ p.authors | replace: site.me, me_bold }}{% if p.role %} (<b>{{ p.role }}</b>){% endif %}</p>
     <p class="pv">{{ p.venue }}</p>
     <div class="meta">
       {% if p.arxiv %}<a class="btn" href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>{% endif %}
@@ -30,7 +27,6 @@
       {% if p.arxiv %}<a class="btn" href="https://scixplorer.org/abs/arXiv:{{ p.arxiv }}/abstract">SciX</a>{% endif %}
       {% if p.arxiv %}<a class="btn" href="https://inspirehep.net/arxiv/{{ p.arxiv }}">INSPIRE</a>{% endif %}
       {% if p.coverage %}<span class="press-row">{% if site.press_label != "" %}<span class="press-label">{{ site.press_label }}</span>{% endif %}{% for c in p.coverage %}{% assign o = site.data.coverage[c.outlet] %}<a class="btn press {{ c.outlet }}" href="{{ c.link }}"><img class="icon" src="{{ '/assets/images/' | append: o.logo | relative_url }}" alt="">{{ c.label | default: o.label }}</a>{% endfor %}</span>{% endif %}
-      {% unless site.badge_place == 'title' or site.badge_place == 'title-float' or site.badge_place == 'authors' %}{{ badges }}{% endunless %}
     </div>
   </div>
 </article>

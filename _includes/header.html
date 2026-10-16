@@ -1,6 +1,5 @@
 <header class="site">
   <a class="name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-  {% unless page.layout == "home" and site.home_nav == "tiles" %}
   <nav class="top" aria-label="Main">
     {% for item in site.data.navigation %}
       {% assign current = false %}
@@ -8,5 +7,4 @@
       <a href="{{ item.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
     {% endfor %}
   </nav>
-  {% endunless %}
 </header>

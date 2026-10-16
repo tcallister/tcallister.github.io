@@ -21,8 +21,7 @@ function setupFilters() {
   }));
 }
 
-// ---------- Side strip: hand-sketched GW signals ----------
-// Placeholder art; TODO pre-render as a static image for production.
+// ---------- Sketched GW signals (header rule, gallery noise rules) ----------
 function rng(seed) {  // small deterministic PRNG so the sketch doesn't change on redraw
   return () => { seed = (seed * 1664525 + 1013904223) % 4294967296; return seed / 4294967296; };
 }
@@ -45,32 +44,7 @@ function chirpSignal(cycles, tMerge, ringDecay, ampMod = 0, eps = 0.06) {
   };
 }
 
-const SIGNALS = [
-  chirpSignal(7, 0.78, 0.025),          // BBH
-  chirpSignal(34, 0.93, 0),             // BNS
-  chirpSignal(16, 0.86, 0.012),         // NSBH
-  chirpSignal(9, 0.8, 0.025, 0.35),     // precessing BBH
-  x => {                                // eccentric: bursts at periapse, converging in time
-    let h = 0, t = 0.08, gap = 0.2;
-    for (let k = 0; k < 9; k++) {
-      h += Math.exp(-(((x - t) / (0.012 + 0.004 * gap)) ** 2)) * Math.cos(80 * (x - t)) * (0.5 + k * 0.07);
-      t += gap; gap *= 0.72;
-    }
-    return Math.max(-1, Math.min(1, h));
-  },
-  x => x < 0.12 ? 0 : Math.exp(-(x - 0.12) / 0.14) * Math.cos(2 * Math.PI * 9 * (x - 0.12)),  // ringdown
-  x => Math.exp(-(((x - 0.5) / 0.1) ** 2)) * Math.cos(2 * Math.PI * 14 * (x - 0.5)),           // sine-Gaussian
-  (() => {                              // stochastic background: smoothed noise
-    const r = rng(99), knots = Array.from({ length: 120 }, () => r() * 2 - 1);
-    return x => {
-      const u = x * 119, i = Math.floor(u), t = u - i;
-      return 0.6 * ((knots[i] ?? 0) * (1 - t) + (knots[i + 1] ?? 0) * t);
-    };
-  })(),
-];
-const SKETCH_COLORS = ["#9fd6ea", "#c3b9f0", "#f2b3a8", "#ecc79c", "#a9d9be"];
-
-// Optional faint image over the strip ground (strip_image in _config.yml)
+// ---------- Side strip: slate ground + optional faint image (strip_image in _config.yml) ----------
 const STRIP_IMG_ALPHA = 0.18;
 // Rotation (deg, + = clockwise) and focus point (fraction of image) placed at strip center.
 // Tuned for the LIGO test illustration (-78° would stack its two black holes vertically).
@@ -133,31 +107,14 @@ function drawStrip() {
 
   const dpr = window.devicePixelRatio || 1;
   cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
-  const g = cv.getContext("2d"), r = rng(0);
+  const g = cv.getContext("2d");
   g.scale(dpr, dpr);
 
-  const inkOnly = document.documentElement.dataset.strip === "ink";
-  const inkColor = getComputedStyle(document.documentElement).getPropertyValue("--sketch-ink").trim();
-  if (!inkOnly) {
-    // Slate ground, a little darker than the header card
-    const sky = g.createLinearGradient(0, 0, 0, h);
-    sky.addColorStop(0, "#232845"); sky.addColorStop(1, "#2f355a");
-    g.fillStyle = sky; g.fillRect(0, 0, w, h);
-  }
+  // Slate ground, then the faint image. Rejected: hand-sketched signals over it
+  const sky = g.createLinearGradient(0, 0, 0, h);
+  sky.addColorStop(0, "#232845"); sky.addColorStop(1, "#2f355a");
+  g.fillStyle = sky; g.fillRect(0, 0, w, h);
   if (stripArt) drawCover(g, stripArt, w, h, STRIP_IMG_ALPHA);
-  if (document.documentElement.dataset.strip === "blank") return;  // ground only, no sketches
-
-  const padX = 18, rowH = 92, rows = Math.ceil(h / rowH);
-  for (let k = 0; k < rows; k++) {
-    const sig = SIGNALS[k % SIGNALS.length];
-    const ink = inkOnly ? inkColor : SKETCH_COLORS[k % SKETCH_COLORS.length];
-    const cy = k * rowH + rowH * 0.5, amp = rowH * 0.3;
-    g.save();
-    g.translate(w / 2, cy); g.rotate((r() - 0.5) * 0.035); g.translate(-w / 2, -cy);  // slight hand-placed tilt
-
-    sketchSignal(g, sig, padX, w - padX, cy, amp, ink, r);
-    g.restore();
-  }
 }
 
 // Draw signal `sig` between x0 and x1 (canvas px), centered on cy, in pencil style
@@ -180,33 +137,7 @@ function sketchSignal(g, sig, x0, x1, cy, amp, ink, r, opacity = 1) {
   }
 }
 
-// ---------- Footer band: one row of sketched signals (sketch_place: footer) ----------
-function drawFooter() {
-  const cv = document.getElementById("foot-sketch");
-  if (!cv) return;
-  const w = cv.clientWidth, h = cv.clientHeight;
-  if (!w || !h) return;
-
-  const dpr = window.devicePixelRatio || 1;
-  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
-  const g = cv.getContext("2d"), r = rng(3);
-  g.scale(dpr, dpr);
-
-  // Background comes from CSS; here just the sketches, ~220px per signal
-  const inkOnly = document.documentElement.dataset.strip === "ink";
-  const inkColor = getComputedStyle(document.documentElement).getPropertyValue("--sketch-ink").trim();
-  const cells = Math.max(1, Math.round(w / 220)), cellW = w / cells, cy = h / 2, amp = h * 0.3;
-  for (let k = 0; k < cells; k++) {
-    const ink = inkOnly ? inkColor : SKETCH_COLORS[k % SKETCH_COLORS.length];
-    const cx = (k + 0.5) * cellW;
-    g.save();
-    g.translate(cx, cy); g.rotate((r() - 0.5) * 0.05); g.translate(-cx, -cy);  // slight hand-placed tilt
-    sketchSignal(g, SIGNALS[k % SIGNALS.length], k * cellW + 16, (k + 1) * cellW - 16, cy, amp, ink, r);
-    g.restore();
-  }
-}
-
-// ---------- Header rule: one long sketched chirp (band_style: plain only) ----------
+// ---------- Header rule: one long sketched chirp ----------
 const RULE_SIGNAL = chirpSignal(30, 0.9, 0.015, 0, 0.015);
 
 function drawRule() {
@@ -230,7 +161,6 @@ function drawRule() {
 }
 
 function setupRule() {
-  if (document.documentElement.dataset.band !== "plain") return;
   const band = document.querySelector(".band");
   if (!band) return;
   const cv = document.createElement("canvas");
@@ -248,10 +178,7 @@ let stripTimer;
 function scheduleStrip() { clearTimeout(stripTimer); stripTimer = setTimeout(drawStrip, 60); }
 const stripCanvas = document.getElementById("side-l");
 if (stripCanvas) new ResizeObserver(scheduleStrip).observe(stripCanvas);
-let footTimer;
-const footCanvas = document.getElementById("foot-sketch");
-if (footCanvas) new ResizeObserver(() => { clearTimeout(footTimer); footTimer = setTimeout(drawFooter, 60); }).observe(footCanvas);
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { drawStrip(); drawRule(); drawFooter(); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawRule);
 
 // ---------- Gallery: rules between entries are sketched stochastic-background noise ----------
 const NOISE_POINTS = 700;    // independent noise samples across a rule (more → busier)

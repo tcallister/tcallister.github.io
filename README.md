@@ -122,7 +122,7 @@ An ID not found in `_papers/` renders as "Missing paper".
 
 ## Site-wide settings
 
-`_config.yml` holds the name, search-engine description, contact links (home page), footer, and design toggles (each commented with its options). Page intros are the `intro:` field at the top of `research.md`, `group.md`, etc. The home bio is the body of `index.md`; the headshot is its `photo:` field.
+`_config.yml` holds the name, search-engine description, contact links (home page), footer, side-strip image and credit, and the "Featured in" label for press pills. Page intros are the `intro:` field at the top of `research.md`, `group.md`, etc. The home bio is the body of `index.md`; the headshot is its `photo:` field.
 
 `news.md`, `publications.md`, and `gallery.md` carry `redirect_from:` so the old site's URLs (`/news.html` etc.) forward to the new ones. Leave these in place; renaming a page's `permalink` needs a matching `redirect_from` too.
 

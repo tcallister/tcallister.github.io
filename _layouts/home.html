@@ -2,7 +2,7 @@
 layout: default
 ---
 {% comment %}
-  Landing page: bio card (body of index.md) → tiles (_data/tiles.yml) → 3 latest news.
+  Landing page: bio (body of index.md) → research tiles (_research/) → 3 latest news.
 {% endcomment %}
 <div class="band">
   <section class="intro">
@@ -24,21 +24,12 @@ layout: default
 
 <main class="wrap">
   <section class="block">
-    {% comment %}
-      home_nav: tiles → tiles from _data/tiles.yml act as the menu.
-      Otherwise → one tile per research theme (_research/), linking to its section of /research/.
-    {% endcomment %}
-    {% if site.home_nav == "tiles" %}
-      <h2 class="sr-only">Site sections</h2>
-      {% assign tiles = site.data.tiles %}
-    {% else %}
-      <h2 class="label">Research</h2>
-      {% assign tiles = site.research | sort: "order" %}
-    {% endif %}
+    {% comment %} One tile per research theme (_research/), linking to its section of /research/ {% endcomment %}
+    <h2 class="label">Research</h2>
+    {% assign tiles = site.research | sort: "order" %}
     <div class="tiles">
       {% for t in tiles %}
-        {% if t.collection %}{% assign href = '/research/#' | append: t.slug %}{% else %}{% assign href = t.url %}{% endif %}
-        <a class="tile" href="{{ href | relative_url }}">
+        <a class="tile" href="{{ '/research/#' | append: t.slug | relative_url }}">
           {% if t.image %}<span class="img" style="background-image:url('{{ '/assets/images/' | append: t.image | relative_url }}')"></span>{% endif %}
           <span class="tint" style="background:var(--a{{ t.color | default: 1 }})"></span>
           <span class="scrim"></span>
