@@ -1,0 +1,36 @@
+{% comment %}
+  One publication row. Pass the paper as `p`: {% include paper.html p=paper %}
+  Site owner's name (site.me) is bolded wherever it appears in `authors`.
+{% endcomment %}
+{% assign p = include.p %}
+{% capture me_bold %}<b>{{ site.me }}</b>{% endcapture %}
+{% capture badges %}{% if p.tags.size > 0 or p.highlight %}<span class="badges">{% for t in p.tags %}<span class="badge {{ t }}">{{ site.data.badges[t] | default: t }}</span>{% endfor %}{% if p.highlight %}<span class="badge highlight">{{ p.highlight }}</span>{% endif %}</span>{% endif %}{% endcapture %}
+<article class="pub" data-tags="{{ p.tags | join: ' ' }}">
+  {% if p.thumbnail %}
+    <img class="thumb" src="{{ '/assets/images/' | append: p.thumbnail | relative_url }}" alt="" loading="lazy">
+  {% else %}
+    <div class="thumb" aria-hidden="true"></div>
+  {% endif %}
+  <div>
+    {% comment %}
+      badge_place: title       → title (balanced) and a badge column side by side
+      badge_place: title-float / authors → badges float right on that line; text wraps around them
+    {% endcomment %}
+    {% if site.badge_place == 'title' and badges != '' %}
+      <div class="ptrow"><p class="pt">{{ p.title }}</p>{{ badges }}</div>
+    {% else %}
+      <p class="pt">{% if site.badge_place == 'title-float' %}{{ badges }}{% endif %}{{ p.title }}</p>
+    {% endif %}
+    <p class="pa">{% if site.badge_place == 'authors' %}{{ badges }}{% endif %}{{ p.authors | replace: site.me, me_bold }}{% if p.role %} (<b>{{ p.role }}</b>){% endif %}</p>
+    <p class="pv">{{ p.venue }}</p>
+    <div class="meta">
+      {% if p.arxiv %}<a class="btn" href="https://arxiv.org/abs/{{ p.arxiv }}">arXiv</a>{% endif %}
+      {% if p.journal %}<a class="btn" href="{{ p.journal }}">Journal</a>{% endif %}
+      {% comment %} SciX and INSPIRE both resolve arXiv IDs, so no extra fields needed {% endcomment %}
+      {% if p.arxiv %}<a class="btn" href="https://scixplorer.org/abs/arXiv:{{ p.arxiv }}/abstract">SciX</a>{% endif %}
+      {% if p.arxiv %}<a class="btn" href="https://inspirehep.net/arxiv/{{ p.arxiv }}">INSPIRE</a>{% endif %}
+      {% if p.coverage %}<span class="press-row">{% if site.press_label != "" %}<span class="press-label">{{ site.press_label }}</span>{% endif %}{% for c in p.coverage %}{% assign o = site.data.coverage[c.outlet] %}<a class="btn press {{ c.outlet }}" href="{{ c.link }}"><img class="icon" src="{{ '/assets/images/' | append: o.logo | relative_url }}" alt="">{{ c.label | default: o.label }}</a>{% endfor %}</span>{% endif %}
+      {% unless site.badge_place == 'title' or site.badge_place == 'title-float' or site.badge_place == 'authors' %}{{ badges }}{% endunless %}
+    </div>
+  </div>
+</article>

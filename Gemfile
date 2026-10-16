@@ -1,8 +1,8 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'jekyll', '~> 4.2'
+# Pins the same Jekyll version and plugins that GitHub Pages uses to build the site,
+# so local previews match production.
+gem "github-pages", group: :jekyll_plugins
 
-group :jekyll_plugins do
-  gem 'jekyll-timeago', '~> 0.13.1'
-  gem 'jekyll-sitemap'
-end
+# Local server for `jekyll serve`; no longer bundled with Ruby 3+.
+gem "webrick"

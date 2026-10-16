@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" data-strip="{{ site.strip_style }}" data-band="{{ site.band_style }}" data-sketch="{{ site.sketch_place }}" data-badges="{{ site.badge_place }}" data-press="{{ site.press_style }}" data-rule="{{ page.rule | default: 'chirp' }}"{% if site.strip_image %} data-strip-img="{{ site.strip_image }}"{% endif %}>
+<head>
+  {% include head.html %}
+</head>
+<body>
+  {% if site.sketch_place != "footer" %}
+    <canvas class="side" id="side-l" aria-hidden="true"></canvas>
+    {% if site.strip_image and site.strip_credit %}<p class="side-credit">{{ site.strip_credit }}</p>{% endif %}
+  {% endif %}
+  {% include header.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Top menu, in order. Add, remove, or reorder lines to change the nav.
+- title: Research
+  url: /research/
+- title: Publications
+  url: /publications/
+- title: Group
+  url: /group/
+- title: News
+  url: /news/
+- title: Gallery
+  url: /gallery/
+- title: CV
+  url: /cv/

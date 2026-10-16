@@ -1,48 +1,86 @@
-# site settings
+# ---------- Site info ----------
 title: Tom Callister
-subtitle: 
-email: thomas.a.callister@gmail.com
-description: I'm a Schmidt AI in Science Fellow in the University of Chicago's Kavli Institute for Cosmological Physics. I'm an expert in the analysis and astrophysics of gravitational waves, with an emphasis on observationally understanding the demographics of merging black holes and neutron stars.<br><br>Scroll down to find out more about me and my work!
-baseurl: "" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+description: >-
+  Assistant Professor of Astronomy at Williams College.
+  Gravitational-wave astrophysics: populations of merging black holes and
+  neutron stars, and the stochastic gravitational-wave background.
 author: Tom Callister
-street_address: The University of Chicago 
-street_address_2: 5640 S. Ellis Ave.
-city: Chicago
-state: IL
-zip_code: 60637
-country: United States of America
-phone: 
+url: "https://tcallister.github.io"
+baseurl: ""
 
-# homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 8
+# Name as it appears in author lists; bolded automatically on the Publications page
+me: "T. Callister"
 
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
-socials:
-  GitHub: https://github.com/tcallister
-  GitLab:
-  Google-Plus: 
-  Instagram:
-  LinkedIn: 
-  Twitter: 
-  Facebook:
-  Slack:
+# Contact links shown under the bio on the home page (order is preserved)
+links:
+  - label: tac7@williams.edu
+    url: mailto:tac7@williams.edu
+  - label: GitHub
+    url: https://github.com/tcallister
+  - label: SciX
+    url: https://scixplorer.org/public-libraries/4dPzXD5qTGOB007HInq-DA
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=yFMi2DAAAAAJ
+  - label: CV (pdf)
+    url: /assets/Callister_CV.pdf   # copy of the compiled LaTeX CV (see README)
 
-# build settings
+footer: "Williams College · Department of Physics and Astronomy · Williamstown, MA"
+
+# Sketched GW-signal art: "footer" (band at page bottom) or "side" (strip in left margin, wide screens only)
+sketch_place: side
+# Its look: "slate" (colored sketches on slate), "ink" (dark sketches on light ground), or "blank" (slate, no sketches; side only)
+strip_style: blank
+# Optional faint image over the side strip (path or URL). LIGO illustration.
+strip_image: "/assets/images/ligo-bbh-illustration.jpg"
+# Small credit in the strip's bottom-left corner.
+strip_credit: "Image: LIGO/Caltech/MIT/Sonoma State (Aurore Simonnet)"
+
+# Publication badges (Student-authored, LVK, ...): "right" (end of the button row), "row" (own row below, left-aligned),
+# "title" (badge column beside a balanced title), "title-float" (floated into the title; disables balanced
+# wrapping), or "authors" (floated into the author line)
+badge_place: title
+
+# Press-coverage pills (`coverage:` on papers; own line below the buttons).
+# press_label: muted lead-in text ("" = none). press_style: "outline" (like the link buttons) or "fill" (borderless gray)
+press_label: "Featured in"
+press_style: fill
+
+# Home-page navigation: "tiles" (no header menu on the home page; the tiles are the menu)
+# or "menu" (header menu on every page; tiles are the research themes in _research/)
+home_nav: menu
+
+# Page-top block (bio, page title): "card" (slate card) or "plain" (no card, page colors)
+band_style: plain
+
+# ---------- Content collections (one markdown file per item) ----------
+# output: false → items are listed on a page but get no URL of their own
+collections:
+  papers:
+    output: false
+  news:
+    output: false
+  gallery:
+    output: false
+  people:
+    output: false
+  research:        # themes: Research page sections + home tiles
+    output: false
+
+defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: page }
+
+# ---------- Build ----------
+theme: null   # GitHub Pages otherwise injects its default "Primer" theme
 markdown: kramdown
-
 sass:
   style: compressed
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from   # old URLs (/news.html etc.) → new ones; see `redirect_from:` in page front matter
 
 exclude:
-- "*.gemspec"
-- LICENSE.md
-- CONTRIBUTING.md
-- README.md 
-
-gems:
-- jekyll-sitemap
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
